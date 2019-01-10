@@ -1,3 +1,4 @@
+#!/bin/sh
 
 # Instalación OpenSSL
 sudo apt-get install openssl
