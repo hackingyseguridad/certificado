@@ -10,3 +10,8 @@ openssl req -x509 -new -nodes -key MyRootCA.key -sha256 -days 1024 -out MyRootCA
 
 # Convertir MyRootCA.pem en MyRootCA.crt para Windows
 openssl x509 -outform der -in MyRootCA.pem -out MyRootCA.crt
+
+# Convertir MyRootCA.pem en MyRootCA.der
+openssl x509 -outform der -in MyRootCA.pem -out MyRootCA.der
+
+
