@@ -15,3 +15,6 @@ openssl x509 -outform der -in MyRootCA.pem -out MyRootCA.crt
 
 # Convertir MyRootCA.pem en MyRootCA.der
 openssl x509 -outform der -in MyRootCA.pem -out MyRootCA.der
+
+# Convertir MyRootCA.pem en MyRootCA.crt
+openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.crt -certfile CACert.crt
