@@ -14,7 +14,7 @@ openssl req -x509 -new -nodes -key MyRootCA.key -sha256 -days 1024 -out MyRootCA
 # Convertir MyRootCA.pem en MyRootCA.crt para Windows
 openssl x509 -outform der -in MyRootCA.pem -out MyRootCA.crt
 
-# Convertir MyRootCA.key en MyRootCA.csr
+# Convertir MyRootCA.key en MyRootCA.csr (Solicitud de Firmar un Certificado)
 openssl req -new -key MyRootCA.key -out MyRootCA.csr
 
 # Convertir MyRootCA.pem en MyRootCA.der
