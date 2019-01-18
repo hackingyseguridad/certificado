@@ -5,6 +5,8 @@
 # -k fuerza a SSL en modo inseguro
 # -s --silent muestra en pantalla los datos solicitados
 # -vvv Mostrar detalle en el resultado
+# -3 sslv3
+# -0 http 1.0
 # curl --cacert my-ca.crt https://[my domain or IP address]
 #
 # Uso.: ./urlssl.sh "https://192.168.1.252:443/../../../../../../../etc/passwd"
