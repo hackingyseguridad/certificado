@@ -23,6 +23,9 @@ openssl x509 -outform der -in MyRootCA.pem -out MyRootCA.der
 # Convertir MyRootCA.pem en y clave privada a PKCS#12 (.pfx .p12)
 openssl pkcs12 -export -out MyRootCA.pfx -inkey MyRootCA.key -in MyRootCA.crt -certfile CACert.crt
 
+# Check Certificado:
+openssl s_client -connect https://www.hackingyseguridad.com:443 |grep Verification
+
 #Reemplace la variable const CA_CERT con el contenido del archivo MyRootCA.pem y la constante CA_CERT_KEY con el contenido de MyRootCA.key en el archivo 'plugin / autocert.go'.
 
 #Instale y establezca el nivel de confianza correcto para la CA 'MyRootCA' en el almacén de certificados de su navegador.
