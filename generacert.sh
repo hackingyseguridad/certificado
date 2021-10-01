@@ -15,4 +15,7 @@ openssl x509 -outform der -in MyRootCA.pem -out MyRootCA.crt
 # Convertir MyRootCA.pem en MyRootCA.der
 openssl x509 -outform der -in MyRootCA.pem -out MyRootCA.der
 
-
+# Copiamos los certificados en los repositorios:
+cp MyRootCA.pem /etc/ssl/certs/MyRootCA.pem
+cp MyRootCA.key /etc/ssl/private/MyRootCA.key
+cp MyRootCA.crt /etc/ssl/certs/MyRootCA.crt
