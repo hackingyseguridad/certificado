@@ -1,6 +1,6 @@
 # certificado
 
-Generate CA key & certificate 
+Generate CA key & autocertificado con generacert.sh
 
 # Instalación OpenSSL
 sudo apt-get install openssl
