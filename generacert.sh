@@ -3,14 +3,14 @@
 # Instalación OpenSSL
 sudo apt-get install openssl
 
-# Generar formato PEM fichero con clave privada MyRootCA.key 
-openssl genrsa -out MyRootCA.key 2048
+# Generar formato PEM fichero con clave privada MyRootCA.key
+openssl genrsa -out /etc/ssl/private/MyRootCA.key 2048
 
 # Generar a partir de la clave privada en MyRootCA el fichero con clave publica MyRootCA.pem
-openssl req -x509 -new -nodes -key /etc/ssl/private/MyRootCA.key -sha256 -days 1024 -out /etc/ssl/certs/MyRootCA.pem
+openssl req -x509 -new -nodes -key /etc/ssl/private/MyRootCA.key -sha256 -days 2048 -out /etc/ssl/certs/MyRootCA.pem
 
 # Convertir MyRootCA.pem en MyRootCA.crt para Windows
-openssl x509 -outform der -in MyRootCA.pem -out /etc/ssl/certs/MyRootCA.crt
+openssl x509 -outform der -in /etc/ssl/certs/MyRootCA.pem -out /etc/ssl/certs/MyRootCA.crt
 
 # Convertir MyRootCA.pem en MyRootCA.der
 openssl x509 -outform der -in /etc/ssl/certs/MyRootCA.pem -out /etc/ssl/certs/MyRootCA.der
