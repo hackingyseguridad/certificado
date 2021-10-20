@@ -45,6 +45,7 @@ SSLCertificateChainFile /etc/ssl/certs/MyRootCA.crt
                                 SSLOptions +StdEnvVars
                                 
                 </FilesMatch>
+                
                 <Directory /usr/lib/cgi-bin>
                 
                                 SSLOptions +StdEnvVars
