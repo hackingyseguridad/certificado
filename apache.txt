@@ -10,16 +10,6 @@ ErrorLog ${APACHE_LOG_DIR}/error.log
 
 CustomLog ${APACHE_LOG_DIR}/access.log combined
 
-ServerName hackingyseguridad.es
-
-SSLEngine on
-
-SSLCertificateFile /etc/ssl/certs/MyRootCA.pem
-
-SSLCertificateKeyFile /etc/ssl/private/MyRootCA.key
-
-SSLCertificateChainFile /etc/ssl/certs/MyRootCA.crt
-
 </VirtualHost>
 
 # /etc/apache2/sites-available/default-ssl.conf 
@@ -55,3 +45,9 @@ SSLCertificateChainFile /etc/ssl/certs/MyRootCA.crt
         </VirtualHost>
         
 </IfModule>
+
+# Finalmente aplicamos cambios en apache2
+
+sudo a2enmod ssl
+
+sudo a2enmod headers
