@@ -53,3 +53,10 @@ CustomLog ${APACHE_LOG_DIR}/access.log combined
 sudo a2enmod ssl
 
 sudo a2enmod headers
+
+sudo a2dissite 000-default.conf
+
+sudo a2ensite 000-default.conf
+
+sudo systemctl restart apache2
+
