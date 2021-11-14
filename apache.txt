@@ -2,7 +2,7 @@ sudo apt-get install apache2-ssl-dev
 
 # /etc/apache2/sites-available/000-default.conf
 
-<VirtualHost *:443>
+<VirtualHost *:80>
 
 ServerAdmin hackingyseguridad@hackingyseguridad.com
 
