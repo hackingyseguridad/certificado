@@ -14,9 +14,8 @@ openssl x509 -req -days 730 -sha256 -extensions server_req -in hacking1.csr -CA 
 # client_cdg Clave privada y certificados
 openssl genrsa -aes256 -passout pass:Hacking0 -out client_cdg.pass.key 4096
 openssl rsa -passin pass:Hacking0 -in client_cdg.pass.key -out client_cdg.key
-rm client_cdg.pass.key
-openssl req -config ca.conf -new -key client_cdg.key -out client_cdg.csr -subj "/C=ES/ST=Madrid/O=HackingySeguridad/L=Aldea del Fresno/CN=hacking"
-openssl x509 -req -days 730 -sha256 -extfile ca.conf -extensions v3_req -in client_cdg.csr -CA ca.pem -CAkey ca.key -CAcreateserial -CAserial 1 -out client_cdg.pem
+openssl req -new -key client_cdg.key -out client_cdg.csr -subj "/C=ES/ST=Madrid/O=HackingySeguridad/L=Aldea del Fresno/CN=hacking"
+openssl x509 -req -days 730 -sha256 -extensions v3_req -in client_cdg.csr -CA ca.pem -CAkey ca.key -CAcreateserial -CAserial 1 -out client_cdg.pem
 openssl pkcs8 -topk8 -inform PEM -outform PEM -in client_cdg.key -out client_cdg.pkcs8.withpass.key -passout pass:Hacking0
 keytool -keystore client_cdg.truststore.jks -alias CAROOT -import -file ca.pem -storepass Hacking0 -noprompt
 openssl pkcs12 -export -in client_cdg.pem  -inkey client_cdg.key -out client_cdg.pfx -passout pass:Hacking0
