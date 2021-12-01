@@ -10,7 +10,7 @@ openssl req -config ca.conf -new -x509 -days 730 -key ca.key -out ca.pem -subj "
 openssl genrsa -aes256 -passout pass:Hacking0 -out hacking1.pass.key 4096
 openssl rsa -passin pass:Hacking0 -in hacking1.pass.key -out hacking1.key
 rm hacking1.pass.key
-openssl req -config ca.conf -new -key hacking1.key -out hacking1.csr -subj "/C=ES/ST=Madrid/O=Cisco/L=Alcobendas/CN=hacking"
+openssl req -config ca.conf -new -key hacking1.key -out hacking1.csr -subj "/C=ES/ST=Madrid/O=HackingySeguridad/L=Aldea del Fresno/CN=hacking"
 openssl x509 -req -days 730 -sha256 -extfile ca.conf -extensions server_req -in hacking1.csr -CA ca.pem -CAkey ca.key -CAcreateserial -CAserial 1 -out hacking1.pem
 
 # client_cdg Clave privada y certificados
