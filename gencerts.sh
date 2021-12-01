@@ -3,8 +3,7 @@
 # CA Clave y Certificado
 openssl genrsa -aes256 -passout pass:Hacking0 -out ca.pass.key 4096
 openssl rsa -passin pass:Hacking0 -in ca.pass.key -out ca.key
-rm ca.pass.key
-openssl req -config ca.conf -new -x509 -days 730 -key ca.key -out ca.pem -subj "/C=ES/ST=Madrid/O=HackingySeguridad/L=Aldea del Fresno /CN=hacking"
+openssl req -new -x509 -days 730 -key ca.key -out ca.pem -subj "/C=ES/ST=Madrid/O=HackingySeguridad/L=Aldea del Fresno /CN=hacking"
 
 # Clave del servidor y certificado
 openssl genrsa -aes256 -passout pass:Hacking0 -out hacking1.pass.key 4096
