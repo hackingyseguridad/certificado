@@ -32,6 +32,7 @@ openssl s_client -connect https://www.hackingyseguridad.com:443 |grep Verificati
 
 #Instale y establezca el nivel de confianza correcto para la CA 'MyRootCA' en el almacén de certificados de su navegador.
 
+# Tipos de extensiones en ficheros de certificados
 
 .key son los que contienen la parte privada del certificado y que complementan la parte publica del CRT / CERT.
 .crt este fichero es el que contiene la parte pública y que al unirse al KEY, genera el certificado completo.
