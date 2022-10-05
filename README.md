@@ -31,3 +31,18 @@ openssl s_client -connect https://www.hackingyseguridad.com:443 |grep Verificati
 #Reemplace la variable const CA_CERT con el contenido del archivo MyRootCA.pem y la constante CA_CERT_KEY con el contenido de MyRootCA.key en el archivo 'plugin / autocert.go'.
 
 #Instale y establezca el nivel de confianza correcto para la CA 'MyRootCA' en el almacén de certificados de su navegador.
+
+
+.key son los que contienen la parte privada del certificado y que complementan la parte publica del CRT / CERT.
+.crt este fichero es el que contiene la parte pública y que al unirse al KEY, genera el certificado completo.
+.pem puede contener múltiples secciones en caso de que sea necesario.
+
+-----BEGIN PRIVATE KEY-----
+//Nuestra KEY
+-----END PRIVATE KEY-----
+-----BEGIN CERTIFICATE-----
+//Certificado intermedio del proveedor
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+//root
+-----END CERTIFICATE-----
