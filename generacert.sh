@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+# (c) hacking y seguridad .com 2022
 
 # Instalación OpenSSL
 sudo apt-get install openssl
