@@ -1,1 +1,15 @@
 
+
+
+
+
+Falcon - El Cifrado Falcon: Un Escudo Post-Cuántico para el Futuro Digital
+¿Qué es Falcon y por qué es importante?
+Falcon es un algoritmo de firma digital que ha sido seleccionado por el Instituto Nacional de Estándares y Tecnología (NIST) de Estados Unidos como uno de los nuevos estándares de criptografía post-cuántica. Esto significa que Falcon está diseñado para resistir los ataques de las futuras computadoras cuánticas, que se espera que sean capaces de romper los sistemas de cifrado actuales con relativa facilidad.
+¿Para qué se utiliza Falcon?
+La principal función de Falcon es garantizar la autenticidad y la integridad de los datos digitales. En términos más sencillos, Falcon se utiliza para:
+•	Firmar digitalmente documentos: Esto permite verificar la identidad del firmante y asegurar que el documento no ha sido alterado desde que se firmó.
+•	Autenticar transacciones: En el comercio electrónico, Falcon puede utilizarse para verificar la identidad de las partes involucradas en una transacción y garantizar que los datos no hayan sido manipulados.
+•	Proteger la comunicación: Falcon puede utilizarse para asegurar la confidencialidad de las comunicaciones al garantizar que solo las partes autorizadas puedan acceder a los mensajes.
+
+
