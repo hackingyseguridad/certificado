@@ -10,6 +10,7 @@ ML-DSA se utiliza principalmente para la firma digital de documentos. Esto signi
 Autenticar la identidad del firmante: Al firmar un documento digitalmente con ML-DSA, se garantiza que la persona que lo firmó es quien dice ser.
 Verificar la integridad del documento: ML-DSA permite verificar si un documento ha sido alterado desde que fue firmado. Esto es fundamental para garantizar la confiabilidad de los documentos digitales.
 
+SLH-DSA, o Stateless Hash-Based Digital Signature Algorithm, es uno de los nuevos algoritmos de cifrado post-cuántico seleccionados por el NIST (Instituto Nacional de Estándares y Tecnología de Estados Unidos) como estándar.
 
 
 
