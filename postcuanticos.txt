@@ -11,9 +11,10 @@ Autenticar la identidad del firmante: Al firmar un documento digitalmente con ML
 Verificar la integridad del documento: ML-DSA permite verificar si un documento ha sido alterado desde que fue firmado. Esto es fundamental para garantizar la confiabilidad de los documentos digitales.
 
 SLH-DSA, o Stateless Hash-Based Digital Signature Algorithm, es uno de los nuevos algoritmos de cifrado post-cuántico seleccionados por el NIST (Instituto Nacional de Estándares y Tecnología de Estados Unidos) como estándar.
-
-
-
+SLH-DSA se utiliza principalmente para la firma digital de documentos, pero con una característica distintiva: no requiere un estado interno. Esto significa que cada firma es independiente de las anteriores, lo que lo hace especialmente útil en situaciones donde:
+La seguridad a largo plazo es crucial: SLH-DSA ofrece una mayor resistencia a ataques a largo plazo, ya que cada firma es independiente y no compromete la seguridad de firmas anteriores.
+Se requiere una alta eficiencia: Al no requerir un estado interno, SLH-DSA puede ser más eficiente en términos de tiempo de cálculo y tamaño de clave en ciertas aplicaciones.
+Se necesita una alta seguridad en entornos con recursos limitados: SLH-DSA es una buena opción para dispositivos con recursos limitados, como tarjetas inteligentes o dispositivos IoT.
 
 Falcon - El Cifrado Falcon: Un Escudo Post-Cuántico para el Futuro Digital
 ¿Qué es Falcon y por qué es importante?
