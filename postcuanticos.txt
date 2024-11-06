@@ -1,5 +1,7 @@
 
 
+La computación cuántica representa una amenaza significativa para los sistemas de seguridad actuales. Las computadoras cuánticas, gracias a su capacidad de realizar cálculos exponencialmente más rápidos que las computadoras clásicas, podrían romper los algoritmos de cifrado 
+
 
 
 
