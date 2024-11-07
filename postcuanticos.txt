@@ -2,6 +2,11 @@
 
 La computación cuántica representa una amenaza significativa para los sistemas de seguridad actuales. Las computadoras cuánticas, gracias a su capacidad de realizar cálculos exponencialmente más rápidos que las computadoras clásicas, podrían romper los algoritmos de cifrado 
 
+actualmente dependemos de la PKI, que es la infraestructura que verifica la confianza, esta basada en cifrados rotos como RSA o Curva elipita DH, que con computacion cuantica sera facilmente romper en poco tiempo.
+
+Diccionarios HASH, se podria comporibar milones de HASES en pocos segudos hata dar con la palabra cifrada
+
+
 ML-KEM (Module Lattice Key Encapsulation Mechanism) es uno de los nuevos algoritmos de cifrado post-cuántico que ha sido seleccionado por el NIST (Instituto Nacional de Estándares y Tecnología de Estados Unidos) como estándar. 
 ML-KEM se utiliza principalmente para el *** intercambio seguro de claves encriptadas. *** Esto significa que si dos dispositivos quieren comunicarse de forma segura, pueden usar ML-KEM para generar una clave secreta que solo ellos conozcan, y luego usar esa clave para cifrar sus mensajes. Resistencia a ataques cuánticos: Al ser un algoritmo post-cuántico, ML-KEM está diseñado para resistir los ataques de las computadoras cuánticas, que representan una amenaza significativa para los sistemas de cifrado actuales. Eficiencia: ML-KEM es relativamente eficiente en términos de tiempo de cálculo y tamaño de clave, lo que lo hace adecuado para su implementación en una amplia variedad de dispositivos. Seguridad: ML-KEM se basa en problemas matemáticos que se consideran difíciles de resolver, incluso para las computadoras cuánticas.
 
