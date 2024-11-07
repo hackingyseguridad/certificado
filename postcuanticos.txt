@@ -9,7 +9,10 @@ por ej.: aLgoritmo de Grover (1996) sera una amenaza en la critptografia simetri
 
 NUEVOS CIFRADOS:
 
-1.- ML-KEM (Module Lattice Key Encapsulation Mechanism) se utiliza principalmente para el intercambio seguro de claves encriptadas. Esto significa que si dos dispositivos quieren comunicarse de forma segura, pueden usar ML-KEM para generar una clave secreta que solo ellos conozcan, y luego usar esa clave para cifrar sus mensajes. Resistencia a ataques cuánticos: . Eficiencia: ML-KEM es relativamente eficiente en términos de tiempo de cálculo y tamaño de clave, lo que lo hace adecuado para su implementación en una amplia variedad de dispositivos. Seguridad: ML-KEM se basa en problemas matemáticos que se consideran difíciles de resolver, incluso para las computadoras cuánticas.
+1.- ML-KEM (Module Lattice Key Encapsulation Mechanism) o CRYSTAL - KYBER se utiliza principalmente para el intercambio seguro de claves encriptadas. Esto significa que si dos dispositivos quieren comunicarse de forma segura, pueden usar ML-KEM para generar una clave secreta que solo ellos conozcan, y luego usar esa clave para cifrar sus mensajes. Resistencia a ataques cuánticos: . Eficiencia: ML-KEM es relativamente eficiente en términos de tiempo de cálculo y tamaño de clave, lo que lo hace adecuado para su implementación en una amplia variedad de dispositivos. Seguridad: ML-KEM se basa en problemas matemáticos que se consideran difíciles de resolver, incluso para las computadoras cuánticas.
+
+
+
 
 2- ML-DSA (Module Lattice Digital Signature Algorithm) se utiliza principalmente para la firma digital de documentos. Esto significa que se emplea para:
 Autenticar la identidad del firmante: Al firmar un documento digitalmente con ML-DSA, se garantiza que la persona que lo firmó es quien dice ser.
