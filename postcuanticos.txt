@@ -11,8 +11,12 @@ NUEVOS CIFRADOS:
 
 1.- ML-KEM (Module Lattice Key Encapsulation Mechanism) o CRYSTAL - KYBER se utiliza principalmente para el intercambio seguro de claves encriptadas. Esto significa que si dos dispositivos quieren comunicarse de forma segura, pueden usar ML-KEM para generar una clave secreta que solo ellos conozcan, y luego usar esa clave para cifrar sus mensajes. Resistencia a ataques cuánticos: . Eficiencia: ML-KEM es relativamente eficiente en términos de tiempo de cálculo y tamaño de clave, lo que lo hace adecuado para su implementación en una amplia variedad de dispositivos. Seguridad: ML-KEM se basa en problemas matemáticos que se consideran difíciles de resolver, incluso para las computadoras cuánticas.
 
-
-
+Se integrara en OpenSSH en las suite cifrados ofrecidas para la versión de TLS 1.X: como citrado de trasporte,  intercambio de claves 
+Protocolo ( Cifrado y modo + HASH algoritm ) ; cifrado AES, tamaño cadena HASH 256, modo CGM +  HASH algotimo SHA384, que hace de control de integridad
+TLS 1.3   ( AES_256_CGM +  SHA384 ) el sustituto post cuantico de AES, sera ML-KEN
+TLS 1.4	  ( ML-KEM-512 + SHA384 )
+TLS 1.4   ( ML-KEM-768 + SHA384 )
+TLS 1.4   ( ML-KEM-1024 + SHA 384 )
 
 2- ML-DSA (Module Lattice Digital Signature Algorithm) se utiliza principalmente para la firma digital de documentos. Esto significa que se emplea para:
 Autenticar la identidad del firmante: Al firmar un documento digitalmente con ML-DSA, se garantiza que la persona que lo firmó es quien dice ser.
