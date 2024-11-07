@@ -4,7 +4,7 @@ La computación cuántica representara una amenaza significativa para los sistem
 RIESGOS:
 1.- Actualmente dependemos de la PKI, que es la infraestructura que verifica la confianza, esta basada en cifrados rotos como RSA o curva elipita DH; RSA y DH se basan en la vasan en la factorización, que requeriria años de computo con la tecnologias actual. Con computacion cuantica sera facilmente romper en poco tiempo, ya que se sabe como.
 2.- Diccionarios HASH, se podria comprobar diccionarios con milones de HASES en pocos segudos hasta dar con la palabra cifrada = HASH
-3.- La capacidad mayor de cpmputo podria facilitar romper cifrados con nuevas vulnerabilidades, por inyección u otra tecnicas que estan aun por descubrirse.
+3.- La capacidad mayor de cpmputo podria facilitar romper cifrados con nuevas vulnerabilidades, por inyección u otras nuevas tecnicas que estan aun por descubrirse.
 por ej.: aLgoritmo de Grover (1996) sera una amenaza en la critptografia simetrica, en la busqueda de claves, como AES o SHA256 con HASES, quiza como posible solución es  aumentar el algoritmo de la claves. Algoritmo de Shor (1994) que permite descomponer en factores primos un numero compuesto en un tiempo. la amenaza seria en la criptografia asimetrica con claves privadas de la PKI.
 
 NUEVOS CIFRADOS:
