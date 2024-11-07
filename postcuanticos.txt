@@ -8,21 +8,22 @@ RIESGOS:
 por ej.: aLgoritmo de Grover (1996) sera una amenaza en la critptografia simetrica, en la busqueda de claves, como AES o SHA256 con HASES, quiza como posible solución es  aumentar el algoritmo de la claves. Algoritmo de Shor (1994) que permite descomponer en factores primos un numero compuesto en un tiempo. la amenaza seria en la criptografia asimetrica con claves privadas de la PKI.
 
 NUEVOS CIFRADOS:
-ML-KEM (Module Lattice Key Encapsulation Mechanism) se utiliza principalmente para el intercambio seguro de claves encriptadas. Esto significa que si dos dispositivos quieren comunicarse de forma segura, pueden usar ML-KEM para generar una clave secreta que solo ellos conozcan, y luego usar esa clave para cifrar sus mensajes. Resistencia a ataques cuánticos: . Eficiencia: ML-KEM es relativamente eficiente en términos de tiempo de cálculo y tamaño de clave, lo que lo hace adecuado para su implementación en una amplia variedad de dispositivos. Seguridad: ML-KEM se basa en problemas matemáticos que se consideran difíciles de resolver, incluso para las computadoras cuánticas.
 
-ML-DSA (Module Lattice Digital Signature Algorithm) se utiliza principalmente para la firma digital de documentos. Esto significa que se emplea para:
+1.- ML-KEM (Module Lattice Key Encapsulation Mechanism) se utiliza principalmente para el intercambio seguro de claves encriptadas. Esto significa que si dos dispositivos quieren comunicarse de forma segura, pueden usar ML-KEM para generar una clave secreta que solo ellos conozcan, y luego usar esa clave para cifrar sus mensajes. Resistencia a ataques cuánticos: . Eficiencia: ML-KEM es relativamente eficiente en términos de tiempo de cálculo y tamaño de clave, lo que lo hace adecuado para su implementación en una amplia variedad de dispositivos. Seguridad: ML-KEM se basa en problemas matemáticos que se consideran difíciles de resolver, incluso para las computadoras cuánticas.
+
+2- ML-DSA (Module Lattice Digital Signature Algorithm) se utiliza principalmente para la firma digital de documentos. Esto significa que se emplea para:
 Autenticar la identidad del firmante: Al firmar un documento digitalmente con ML-DSA, se garantiza que la persona que lo firmó es quien dice ser.
 Verificar la integridad del documento: ML-DSA permite verificar si un documento ha sido alterado desde que fue firmado. Esto es fundamental para garantizar la confiabilidad de los documentos digitales.
 
-SLH-DSA, o Stateless Hash-Based Digital Signature Algorithm, se utiliza principalmente para la firma digital de documentos, pero con una característica distintiva: no requiere un estado interno. Esto significa que cada firma es independiente de las anteriores, lo que lo hace especialmente útil en situaciones donde:
+3- SLH-DSA, o Stateless Hash-Based Digital Signature Algorithm, se utiliza principalmente para la firma digital de documentos, pero con una característica distintiva: no requiere un estado interno. Esto significa que cada firma es independiente de las anteriores, lo que lo hace especialmente útil en situaciones donde:
 La seguridad a largo plazo es crucial: SLH-DSA ofrece una mayor resistencia a ataques a largo plazo, ya que cada firma es independiente y no compromete la seguridad de firmas anteriores.
 Se requiere una alta eficiencia: Al no requerir un estado interno, SLH-DSA puede ser más eficiente en términos de tiempo de cálculo y tamaño de clave en ciertas aplicaciones.
 Se necesita una alta seguridad en entornos con recursos limitados: SLH-DSA es una buena opción para dispositivos con recursos limitados, como tarjetas inteligentes o dispositivos IoT.
 
-Falcon - es un algoritmo de firma digital que ha sido seleccionado por el Instituto Nacional de Estándares y Tecnología (NIST) de Estados Unidos como uno de los nuevos estándares de criptografía post-cuántica. Esto significa que Falcon está diseñado para resistir los ataques de las futuras computadoras cuánticas, que se espera que sean capaces de romper los sistemas de cifrado actuales con relativa facilidad.
+4.- Falcon - es un algoritmo de firma digital que ha sido seleccionado por el Instituto Nacional de Estándares y Tecnología (NIST) de Estados Unidos como uno de los nuevos estándares de criptografía post-cuántica. Esto significa que Falcon está diseñado para resistir los ataques de las futuras computadoras cuánticas, que se espera que sean capaces de romper los sistemas de cifrado actuales con relativa facilidad.
 La principal función de Falcon es garantizar la autenticidad y la integridad de los datos digitales. En términos más sencillos, Falcon se utiliza para:
-1º.- Firmar digitalmente documentos: Esto permite verificar la identidad del firmante y asegurar que el documento no ha sido alterado desde que se firmó.
-2º.- Autenticar transacciones: En el comercio electrónico, Falcon puede utilizarse para verificar la identidad de las partes involucradas en una transacción y garantizar que los datos no hayan sido manipulados.
-3º.- Proteger la comunicación: Falcon puede utilizarse para asegurar la confidencialidad de las comunicaciones al garantizar que solo las partes autorizadas puedan acceder a los mensajes.
+- Firmar digitalmente documentos: Esto permite verificar la identidad del firmante y asegurar que el documento no ha sido alterado desde que se firmó.
+- Autenticar transacciones: En el comercio electrónico, Falcon puede utilizarse para verificar la identidad de las partes involucradas en una transacción y garantizar que los datos no hayan sido manipulados.
+- Proteger la comunicación: Falcon puede utilizarse para asegurar la confidencialidad de las comunicaciones al garantizar que solo las partes autorizadas puedan acceder a los mensajes.
 
 HACKINGYSEGURIDAD.COM 2024
