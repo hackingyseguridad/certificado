@@ -9,7 +9,7 @@ La capacidad mayor de cpmputo podria facilitar romper cifrados con nuevas vuln, 
 
 por ej.: ALgoritmo de Grover (1996) sera una amenaza en la critptografia simetrica, en la busqueda de claves, como AES o SHA256 con HASES
 Posible solución aumentar el algoritmo de la claves. 
-Algoritmo de Shor que permite descomponer en 
+Algoritmo de Shor que permite descomponer en factores primos un numero compuesto en un tiempo. la amenaza seria en la criptografia asimetrica con clave privada de la PKI
 
 ML-KEM (Module Lattice Key Encapsulation Mechanism) es uno de los nuevos algoritmos de cifrado post-cuántico que ha sido seleccionado por el NIST (Instituto Nacional de Estándares y Tecnología de Estados Unidos) como estándar. 
 ML-KEM se utiliza principalmente para el *** intercambio seguro de claves encriptadas. *** Esto significa que si dos dispositivos quieren comunicarse de forma segura, pueden usar ML-KEM para generar una clave secreta que solo ellos conozcan, y luego usar esa clave para cifrar sus mensajes. Resistencia a ataques cuánticos: Al ser un algoritmo post-cuántico, ML-KEM está diseñado para resistir los ataques de las computadoras cuánticas, que representan una amenaza significativa para los sistemas de cifrado actuales. Eficiencia: ML-KEM es relativamente eficiente en términos de tiempo de cálculo y tamaño de clave, lo que lo hace adecuado para su implementación en una amplia variedad de dispositivos. Seguridad: ML-KEM se basa en problemas matemáticos que se consideran difíciles de resolver, incluso para las computadoras cuánticas.
