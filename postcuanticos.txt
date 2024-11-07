@@ -5,7 +5,7 @@ RIESGOS:
 1.- Actualmente dependemos de la PKI, que es la infraestructura que verifica la confianza, esta basada en cifrados rotos como RSA o curva elipita DH, que con computacion cuantica sera facilmente romper en poco tiempo, ya se sabe como romperlos.
 2.- Diccionarios HASH, se podria comprobar diccionarios con milones de HASES en pocos segudos hasta dar con la palabra cifrada = HASH
 3.- La capacidad mayor de cpmputo podria facilitar romper cifrados con nuevas vulnerabilidades, por inyección u otra tecnicas que estan aun por descubrirse.
-por ej.: aLgoritmo de Grover (1996) sera una amenaza en la critptografia simetrica, en la busqueda de claves, como AES o SHA256 con HASES, quiza como posible solución es  aumentar el algoritmo de la claves. Algoritmo de Shor que permite descomponer en factores primos un numero compuesto en un tiempo. la amenaza seria en la criptografia asimetrica con clave privada de la PKI
+por ej.: aLgoritmo de Grover (1996) sera una amenaza en la critptografia simetrica, en la busqueda de claves, como AES o SHA256 con HASES, quiza como posible solución es  aumentar el algoritmo de la claves. Algoritmo de Shor (1994) que permite descomponer en factores primos un numero compuesto en un tiempo. la amenaza seria en la criptografia asimetrica con claves privadas de la PKI.
 
 NUEVOS CIFRADOS:
 ML-KEM (Module Lattice Key Encapsulation Mechanism) es uno de los nuevos algoritmos de cifrado post-cuántico que ha sido seleccionado por el NIST (Instituto Nacional de Estándares y Tecnología de Estados Unidos) como estándar. 
