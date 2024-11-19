@@ -1,39 +1,55 @@
 INTRODUCCION:
-La computación cuántica representara una amenaza significativa para los sistemas de seguridad actuales. Las computadoras cuánticas, gracias a su capacidad de realizar cálculos exponencialmente más rápidos que las computadoras clásicas, podrían romper de forma rapida algoritmos de cifrado actuales.
-
+La computación cuántica representara una amenaza significativa para los sistemas de seguridad actuales. Las computadoras cuánticas, gracias a su capacidad de realizar cálculos exponencialmente más rápidos que las computadoras clásicas, podrían romper de forma rápida algoritmos de cifrado actuales.
 RIESGOS: PUNTOS DEBILES:
-1.- Actualmente dependemos de la infraestructura PKI (entidad certificadora CA, certificado digital, clave publica y clave privada, autoridad registro, revocacion..), que es la infraestructura que verifica la confianza, esta basada en cifrados rotos como RSA o curva elipita DH; RSA y DH se basan en la vasan en la factorización, que requeriria años de computo con la tecnologias actual. Con computacion cuantica sera facilmente romper en poco tiempo, ya que se sabe como.
-2.- Diccionarios HASH, se podria comprobar diccionarios con milones de HASES en pocos segudos hasta dar con la palabra cifrada = HASH
-3.- La capacidad mayor de cpmputo podria facilitar romper cifrados con nuevas vulnerabilidades, por inyección u otras nuevas tecnicas que estan aun por descubrirse.
-por ej.: aLgoritmo de Grover (1996) sera una amenaza en la critptografia simetrica, en la busqueda de claves, como AES o SHA256 con HASES, quiza como posible solución es  aumentar el algoritmo de la claves. Algoritmo de Shor (1994) que permite descomponer en factores primos un numero compuesto en un tiempo. la amenaza seria en la criptografia asimetrica con claves privadas de la PKI.
-
-NUEVAS COMBINACIOJNES DE CIFRADOS POSCUANTICO:
-1.- ML-KEM (Module Lattice Key Encapsulation Mechanism) o crystal - KYBER, basada en una estructura compleja o reticulos,  se utiliza principalmente para el intercambio seguro de claves encriptadas. Esto significa que si dos dispositivos quieren comunicarse de forma segura, pueden usar ML-KEM para generar una clave secreta que solo ellos conozcan, y luego usar esa clave para cifrar sus mensajes. Resistencia a ataques cuánticos: . Eficiencia: ML-KEM es relativamente eficiente en términos de tiempo de cálculo y tamaño de clave, lo que lo hace adecuado para su implementación en una amplia variedad de dispositivos. Seguridad: ML-KEM se basa en problemas matemáticos que se consideran difíciles de resolver, incluso para las computadoras cuánticas.
-Se integrara en OpenSSH, en las suite cifrados ofrecidas para la versión de TLS 1.X: como firma, intercambio seguro de claves;  este proceso permite a dos partes establecer una comunicación segura sin compartir una clave secreta de antemano. Esto se hace actualmente  mediante algoritmos rotos: Diffie-Hellman, ECDH, RSA, RCC,  Elliptic Curve Digital Signature Algorithm (ECDSA), PBKDF  que utilizan pares de claves: una pública y otra privada, fundamentales para muchos protocolos de seguridad, como TLS, SSH y VPNs.
-p.ej. TLS 1.3  ( AES_256_CGM +  SHA384 ) Protocolo ( Cifrado y modo + HASH algoritm ) ; cifrado AES, tamaño cadena HASH 256, modo CGM +  HASH algotimo SHA384, que hace de control de integridad  - sera  ML-KEM-512 el que se encargara del intercambio de claves segura, combinado en conjunto con AES-256-GCM
-
-2- ML-DSA (Module Lattice Digital Signature Algorithm) o Cristal Dilitium, basada en una estructura compleja o reticulos,  se utiliza principalmente para la firma digital de documentos. Esto significa que se emplea para:
+1.- Diccionarios HASH, se podría comprobar diccionarios con millones de HASES en pocos segundos hasta dar con la palabra cifrada = HASH
+2.- La capacidad mayor de cómputo podría facilitar romper cifrados con nuevas vulnerabilidades, por in-yección u otras nuevas técnicas que están aún por descubrirse. con la tecnología cuántica se reducirá a segundos, cálculos que ahora requieren años.  Actualmente dependemos de la infraestructura PKI (entidad certificadora CA, certificado digital, clave publica y clave privada, autoridad registro, revocación.), que es la infraestructura que verifica la confianza, está basada en cifrados rotos como RSA o curva elíptica DH; RSA y DH se basan en la basan en la factorización, que requeriría años de cómputo con la tecnología ac-tual. Con computación cuántica será fácilmente romper en poco tiempo, ya que se sabe cómo.  Por ejem-plo: 
+Algoritmo cuántico Grover (1996), reduce el tiempo para encontrar ciertos elementos, reduce significativamente la fortaleza de las claves actuales; Es una amenaza para los cifrados simétricos son los que usan la misma clave para cifrar y descifrar; por ej.: AES, DES, 3DES,  o diccionarios Hash en SHA-256.  Lo recomendado es duplicar el tamaño de las claves actuales
+Algoritmo cuántico Shor (1994), permite descomponer en factores primos un numero compuesto en tiempo polinómico; Supone una amenaza para cifrados asimétricos que usan claves públicas (cifrado) y claves privadas(descifrado) una infraestructura PKI: intercambios de clave RSA y curvas elípticas:
+ 
+Intercambio de claves públicas (cifrar) y clave privadas (descifrar) con Infraestructura de clave Publica ó PKI: 
+NUEVAS COMBINACIOJNES DE CIFRADOS POST CUANTICO:
+NIST lanza el 13 de agosto de 2024, los primeros estándares de cifrados, post cuánticos, que han sido normalizados:
+Se estima que en pocos años tendremos ya ordenadores cuánticos, accesibles para los todos los usuarios.
+Se crea la necesidad de crear nuevos algoritmos post cuánticos que resistan los ataques con tecnología cuántica, combinados sobre los actuales cifrados utilizados.
+ 
+Se crea nuevas combinaciones para con los cifrados actuales, para mitigar posibles ataques: 
+CRYSTAL-KYBER ó ML-KEM (Module Lattice Key-Based Encapsulation Mechanism), meca-nismo de encapsulamiento de claves que permite a dos partes intercambiar una clave secreta compartida de manera segura ML-KEM, un mecanismo de encapsulación de claves seleccionado para cifrado general, como para acceder a sitios web seguros:  ML-KEM-512, ML-KEM-768, ML-KEM-1024
+ML-KEM (Module Lattice Key Encapsulation Mechanism) o crystal - KYBER, basada en una estructura compleja o reticu-los, se utiliza principalmente para el intercambio seguro de claves encriptadas. Esto significa que si dos dispositivos quieren comunicarse de forma segura, pueden usar ML-KEM para generar una clave secreta que solo ellos conozcan, y luego usar esa clave para cifrar sus mensajes. Resistencia a ataques cuánticos: . Eficiencia: ML-KEM es relativamente eficiente en términos de tiempo de cálculo y tamaño de clave, lo que lo hace adecuado para su implementación en una amplia variedad de dispositivos. Seguridad: ML-KEM se basa en problemas matemáticos que se consideran difíciles de resolver, incluso para las computadoras cuánticas.
+Se integrará en OpenSSH, en la suite cifrados ofrecidas para la versión de TLS 1.X: como firma, intercambio seguro de cla-ves; este proceso permite a dos partes establecer una comunicación segura sin compartir una clave secreta de antemano. Esto se hace actualmente mediante algoritmos rotos: Diffie-Hellman, ECDH, RSA, RCC,  Elliptic Curve Digital Signature Algorithm (ECDSA), PBKDF  que utilizan pares de claves: una pública y otra privada, fundamentales para muchos protoco-los de seguridad, como TLS, ssh, VPN, …
+ 
+p.ej. TLS 1.x  ( AES_256_CGM +  SHA384 ) Protocolo ( Cifrado y modo + HASH algoritmo ) ; cifrado AES, tamaño cadena HASH 256, modo CGM +  HASH algoritmo SHA384, que hace de control de integridad  - será  ML-KEM-512  - 1024 el que se encargara del intercambio de claves segura, combinado en conjunto con AES-256-GCM
+https://csrc.nist.gov/pubs/fips/203/ipd 
+CRYSTAL-Dilithium ó ML-DSA (Module Lattice Digital Signature Algorithm),  para firma digi-tal. ML-DSA, un algoritmo basado en red elegido para protocolos de firma digital de propósito general .
+ML-DSA (Module Lattice Digital Signature Algorithm) o Cristal Dilitium, basada en una estructura compleja o retículos, se utiliza principalmente para la firma digital de documentos. Esto significa que se emplea para:
 Autenticar la identidad del firmante: Al firmar un documento digitalmente con ML-DSA, se garantiza que la persona que lo firmó es quien dice ser.
 Verificar la integridad del documento: ML-DSA permite verificar si un documento ha sido alterado desde que fue firmado. Esto es fundamental para garantizar la confiabilidad de los documentos digitales.
-Firma digital de documentos: Para garantizar la autenticidad, integridad y no repudio de documentos electrónicos.
+Firma digital de documentos: Para garantizar la autenticidad, integridad y no repudio de documentos elec-trónicos.
 Autenticación de usuarios: Para verificar la identidad de usuarios en sistemas informáticos y aplicaciones.
-Protección de software: Para garantizar la integridad del software y evitar la instalación de software malicioso.
+Protección de software: Para garantizar la integridad del software y evitar la instalación de software mali-cioso.
 Blockchain: Para asegurar la integridad y transparencia de las transacciones en las blockchains.
+https://csrc.nist.gov/pubs/fips/204/ipd  
 
-3- SLH-DSA, o Stateless Hash-Based Digital Signature Algorithm, o SPHINICS +, basado en HASH,  se utiliza principalmente para la firma digital de documentos, pero con una característica distintiva: no requiere un estado interno. Esto significa que cada firma es independiente de las anteriores, lo que lo hace especialmente útil en situaciones donde:
+SPHICIS SLH-DSA ó (Stateless Hash-Based Digital Signature), algoritmo de firma digital basa-do en hash, evita ataques de diccionario HASH. SLH-DSA, un esquema de firma digital basado en hash sin estado.
+SLH-DSA, o Stateless Hash-Based Digital Signature Algorithm, o SPHINICS +, basado en HASH,  se utiliza principalmente para la firma digital de documentos, pero con una característica distintiva: no re-quiere un estado interno. Esto significa que cada firma es independiente de las anteriores, lo que lo hace especialmente útil en situaciones donde:
 La seguridad a largo plazo es crucial: SLH-DSA ofrece una mayor resistencia a ataques a largo plazo, ya que cada firma es independiente y no compromete la seguridad de firmas anteriores.
 Se requiere una alta eficiencia: Al no requerir un estado interno, SLH-DSA puede ser más eficiente en términos de tiempo de cálculo y tamaño de clave en ciertas aplicaciones.
 Se necesita una alta seguridad en entornos con recursos limitados: SLH-DSA es una buena opción para dispositivos con recursos limitados, como tarjetas inteligentes o dispositivos IoT.
-Para ello falta que:
+Para ello falta:
 Definición de Suites Cifradas: Se crearán nuevas suites cifradas que incluyan SLH-DSA como opción de firma digital. Estas suites especificarán los algoritmos exactos que se utilizarán para la autenticación, el cifrado y la integridad de los datos.
 Actualización de Protocolos: Los protocolos TLS existentes deberán actualizarse para reconocer y soportar las nuevas suites cifradas que incluyen SLH-DSA. Esto requerirá cambios en la negociación de cifrado y en la verificación de firmas.
-Implementación en Software y Hardware: Los navegadores, servidores web y otros sistemas que implementen TLS deberán ser actualizados para soportar las nuevas suites cifradas. Esto implica cambios en las bibliotecas criptográficas y en el código de aplicación.
-Depliegue Gradual: La adopción de SLH-DSA en TLS será un proceso gradual. Inicialmente, coexistirá con los algoritmos existentes, permitiendo una transición suave. A medida que la confianza en SLH-DSA aumente y los sistemas se actualicen, se espera que se convierta en la opción preferida para muchas aplicaciones.
-
-4.- Falcon -previsiblemente sera validado por el (NIST) en 2025 como uno de los nuevos estándares de criptografía post-cuántica. Esto significa que Falcon está diseñado para resistir los ataques de las futuras computadoras cuánticas, que se espera que sean capaces de romper los sistemas de cifrado actuales con relativa facilidad.
-La principal función de Falcon es garantizar la autenticidad y la integridad de los datos digitales. En términos más sencillos, Falcon se utiliza para:
-- Firmar digitalmente documentos: Esto permite verificar la identidad del firmante y asegurar que el documento no ha sido alterado desde que se firmó.
+Implementación en Software y Hardware: Los navegadores, servidores web y otros sistemas que imple-menten TLS deberán ser actualizados para soportar las nuevas suites cifradas. Esto implica cambios en las bibliotecas criptográficas y en el código de aplicación.
+Depliegue Gradual: La adopción de SLH-DSA en TLS será un proceso gradual. Inicialmente, coexistirá con los algoritmos existentes, permitiendo una transición suave. A medida que la confianza en SLH-DSA aumente y los sistemas se actualicen, se espera que se convierta en la opción preferida para muchas aplica-ciones.
+https://csrc.nist.gov/pubs/fips/205/ipd/
+Falcon -previsiblemente será validado por el NIST en 2025 como uno de los nuevos estándares de cripto-grafía post cuántica. Esto significa que Falcon está diseñado para resistir los ataques de las futuras compu-tadoras cuánticas, que se espera que sean capaces de romper los sistemas de cifrado actuales con relativa facilidad.
+La principal función de Falcon es garantizar la autenticidad y la integridad de los datos digitales. En térmi-nos más sencillos, Falcon se utiliza para:
+- Firmar digitalmente documentos: Esto permite verificar la identidad del firmante y asegurar que el do-cumento no ha sido alterado desde que se firmó.
 - Autenticar transacciones: En el comercio electrónico, Falcon puede utilizarse para verificar la identidad de las partes involucradas en una transacción y garantizar que los datos no hayan sido manipulados.
-- Proteger la comunicación: Falcon puede utilizarse para asegurar la confidencialidad de las comunicaciones al garantizar que solo las partes autorizadas puedan acceder a los mensajes.
+- Proteger la comunicación: Falcon puede utilizarse para asegurar la confidencialidad de las comunicacio-nes al garantizar que solo las partes autorizadas puedan acceder a los mensajes.
+Estos nuevos algoritmos tienen el objetivo de proteger los datos intercambiados en redes públicas, y las firmas digitales que se usan para autentificar las identidades de las personas. Actualmente se usan algorit-mos de cifrado como RSA, vulnerado y superado por la computación cuántica.  Impactara a corto plazo, en las implementación y nuevos dispositivos o nuevas actualizaciones de sofware-firmware, que veremos en múltiples dispositivos.
+https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards 
+https://csrc.nist.gov/Projects/Post-Quantum-Cryptography 
+https://pq-crystals.org/ 
+https://es.wikipedia.org/wiki/Criptograf%C3%ADa_postcu%C3%A1ntica 
+
 
 HACKINGYSEGURIDAD.COM 2024
