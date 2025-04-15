@@ -21,15 +21,15 @@ Validación de la Cadena de Confianza: Es importante verificar que la cadena de 
 
 <img style="float:left" alt="Entidad Certificadora" src="https://github.com/hackingyseguridad/certificado/blob/master/ca.jpg">
 
-Certificado Raíz:
+## Certificado Raíz:
 
 El certificado raíz es un certificado auto-firmado emitido por una Autoridad de Certificación (CA) para identificarse a sí misma. Es el punto de partida de una cadena de confianza. Los navegadores y sistemas operativos confían implícitamente en los certificados raíz de las CAs reconocidas. Cuando un certificado de usuario o de servidor es emitido por una CA, su validez se verifica rastreando la cadena de certificación hasta el certificado raíz de confianza. El certificado raíz contiene la clave pública de la CA, que se utiliza para verificar las firmas de los certificados que emite.
 
-** Certificado de Cliente:
+## Certificado de Cliente:
 
 Un certificado de cliente es un tipo de certificado digital que se utiliza para identificar y autenticar a un cliente (un usuario, una aplicación o un dispositivo) cuando intenta acceder a un servidor o servicio. A diferencia de los certificados de servidor, que autentican el servidor ante el cliente, los certificados de cliente autentican al cliente ante el servidor. Se utilizan a menudo en escenarios donde se requiere una autenticación fuerte y mutua, como el acceso a redes privadas virtuales (VPNs), aplicaciones empresariales o servicios web restringidos. También se utilizan para firmar y cifrar correos electrónicos (certificados S/MIME).
 
-** Extensiones de certificados:
+## Extensiones de certificados:
 
 .CER o .CRT: Suelen ser certificados X.509 codificados en formato DER binario o en formato PEM (Base64 ASCII). A menudo contienen solo el certificado público y no la clave privada.
 
