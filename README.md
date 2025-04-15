@@ -1,3 +1,10 @@
+
+
+
+<img style="float:left" alt="Entidad Certificadora" src="https://github.com/hackingyseguridad/certificado/blob/master/ca.jpg">
+
+
+
 Scripts para generar auto certificado digital 
 
 # certificado
