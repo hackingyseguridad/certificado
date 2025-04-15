@@ -47,7 +47,7 @@ Un certificado de cliente es un tipo de certificado digital que se utiliza para 
 
 Scripts para generar auto certificado digital 
 
-# certificado
+## certificado
 
 Generate CA key & autocertificado con generacert.sh
 
@@ -66,20 +66,20 @@ openssl x509 -outform der -in MyRootCA.pem -out MyRootCA.crt
 ## Convertir MyRootCA.key en MyRootCA.csr (Solicitud de Firmar un Certificado)
 openssl req -new -key MyRootCA.key -out MyRootCA.csr
 
-# Convertir MyRootCA.pem en MyRootCA.der
+## Convertir MyRootCA.pem en MyRootCA.der
 openssl x509 -outform der -in MyRootCA.pem -out MyRootCA.der
 
-# Convertir MyRootCA.pem en y clave privada a PKCS#12 (.pfx .p12)
+## Convertir MyRootCA.pem en y clave privada a PKCS#12 (.pfx .p12)
 openssl pkcs12 -export -out MyRootCA.pfx -inkey MyRootCA.key -in MyRootCA.crt -certfile CACert.crt
 
-# Check Certificado:
+## Check Certificado:
 openssl s_client -connect https://www.hackingyseguridad.com:443 |grep Verification
 
 #Reemplace la variable const CA_CERT con el contenido del archivo MyRootCA.pem y la constante CA_CERT_KEY con el contenido de MyRootCA.key en el archivo 'plugin / autocert.go'.
 
 #Instale y establezca el nivel de confianza correcto para la CA 'MyRootCA' en el almacén de certificados de su navegador.
 
-# Tipos de extensiones en ficheros de certificados
+## Tipos de extensiones en ficheros de certificados
 
 .key son los que contienen la parte privada del certificado y que complementan la parte publica del CRT / CERT.
 .crt este fichero es el que contiene la parte pública y que al unirse al KEY, genera el certificado completo.
@@ -94,3 +94,4 @@ openssl s_client -connect https://www.hackingyseguridad.com:443 |grep Verificati
 -----BEGIN CERTIFICATE-----
 //root
 -----END CERTIFICATE-----
+
