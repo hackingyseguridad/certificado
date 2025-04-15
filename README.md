@@ -1,6 +1,6 @@
 
 
-Entidad certificadora (CA) inspección del Certificado:
+** Entidad certificadora (CA) inspección del Certificado:
 
 Apertura/Importación del Certificado: El usuario abre o importa el archivo del certificado utilizando la herramienta elegida.
 Visualización de los Detalles: La herramienta mostrará la información contenida en el certificado, que típicamente incluye:
