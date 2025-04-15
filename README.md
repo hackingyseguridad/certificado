@@ -29,6 +29,16 @@ Certificado de Cliente:
 
 Un certificado de cliente es un tipo de certificado digital que se utiliza para identificar y autenticar a un cliente (un usuario, una aplicación o un dispositivo) cuando intenta acceder a un servidor o servicio. A diferencia de los certificados de servidor, que autentican el servidor ante el cliente, los certificados de cliente autentican al cliente ante el servidor. Se utilizan a menudo en escenarios donde se requiere una autenticación fuerte y mutua, como el acceso a redes privadas virtuales (VPNs), aplicaciones empresariales o servicios web restringidos. También se utilizan para firmar y cifrar correos electrónicos (certificados S/MIME).
 
+Extensiones Comunes:
+
+.CER o .CRT: Suelen ser certificados X.509 codificados en formato DER binario o en formato PEM (Base64 ASCII). A menudo contienen solo el certificado público y no la clave privada.
+.PEM: (Privacy-Enhanced Mail) Es un formato de texto que utiliza la codificación Base64 para representar el certificado (y a veces la clave privada). Los archivos PEM están delimitados por líneas como -----BEGIN CERTIFICATE----- y -----END CERTIFICATE-----. Pueden contener un solo certificado, la cadena de certificados o la clave privada. Las extensiones .pem, .crt y .cer se usan a menudo indistintamente para archivos codificados en PEM.
+.DER: (Distinguished Encoding Rules) Es una codificación binaria del estándar X.509. Los archivos con extensión .der generalmente contienen un solo certificado.
+.P7B o .P7C: Son archivos PKCS#7 (Public-Key Cryptography Standards #7). Pueden contener uno o varios certificados (la cadena de confianza) pero no suelen incluir la clave privada.
+.PFX o .P12: Son archivos PKCS#12. Este formato es un contenedor que puede almacenar tanto el certificado público como la clave privada asociada, y potencialmente la cadena de certificados. Suelen estar protegidos con una contraseña. Es un formato común para importar y exportar certificados en sistemas Windows y macOS.
+.KEY: Aunque no es exclusivamente para certificados, esta extensión se utiliza comúnmente para almacenar claves privadas en formato PEM o DER. A veces puede contener también el certificado público.
+.CSR: (Certificate Signing Request) No es un certificado en sí, sino una solicitud enviada a una Autoridad de Certificación (CA) para solicitar un certificado. Contiene información sobre la identidad del solicitante y su clave pública. Puede estar en formato PEM o DER.
+
 
 Scripts para generar auto certificado digital 
 
