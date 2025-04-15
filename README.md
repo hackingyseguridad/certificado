@@ -1,9 +1,25 @@
 
 
-Entidad certificadora (CA)
+Entidad certificadora (CA) inspección del Certificado:
+
+Apertura/Importación del Certificado: El usuario abre o importa el archivo del certificado utilizando la herramienta elegida.
+Visualización de los Detalles: La herramienta mostrará la información contenida en el certificado, que típicamente incluye:
+Número de Serie: Un identificador único para ese certificado.
+Emisor: El nombre de la Autoridad de Certificación (CA) que emitió el certificado.
+Sujeto: La entidad (persona, organización, servidor) a la que se emitió el certificado.
+Validez: Las fechas de inicio y fin de validez del certificado (caducidad).
+Algoritmo de Firma: El algoritmo criptográfico utilizado para firmar el certificado.
+Clave Pública: La clave pública asociada al certificado.
+Huella Digital (Thumbprint): Un hash único del certificado, utilizado para su identificación.
+Extensiones: Información adicional como el uso previsto del certificado.
+Ruta de Certificación: La jerarquía de CAs que llevaron a la emisión del certificado.
+4. Verificación Adicional (Opcional):
+
+Lista de Certificados Revocados (CRL): Para comprobar si un certificado ha sido revocado antes de su fecha de caducidad, se puede consultar la CRL publicada por la CA emisora. La información sobre dónde encontrar la CRL suele estar incluida en el certificado.
+Protocolo de Estado de Certificados en Línea (OCSP): Una alternativa a la CRL que permite realizar consultas en tiempo real sobre el estado de un certificado a un servidor OCSP de la CA. La información del servidor OCSP también puede estar incluida en el certificado.
+Validación de la Cadena de Confianza: Es importante verificar que la cadena de certificación sea válida, es decir, que el certificado haya sido emitido por una CA en la que se confía (normalmente una CA raíz o una CA intermedia cuya firma está verificada por una CA raíz de confianza).
 
 <img style="float:left" alt="Entidad Certificadora" src="https://github.com/hackingyseguridad/certificado/blob/master/ca.jpg">
-
 
 
 Scripts para generar auto certificado digital 
