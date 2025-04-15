@@ -1,6 +1,6 @@
 
 
-** Entidad certificadora (CA) inspección del Certificado:
+## Entidad certificadora (CA) inspección del Certificado:
 
 Apertura/Importación del Certificado: El usuario abre o importa el archivo del certificado utilizando la herramienta elegida.
 Visualización de los Detalles: La herramienta mostrará la información contenida en el certificado, que típicamente incluye:
@@ -28,19 +28,19 @@ Scripts para generar auto certificado digital
 
 Generate CA key & autocertificado con generacert.sh
 
-# Instalación OpenSSL
+## Instalación OpenSSL
 sudo apt-get install openssl
 
-# Generar formato PEM fichero con clave privada MyRootCA.key 
+## Generar formato PEM fichero con clave privada MyRootCA.key 
 openssl genrsa -out MyRootCA.key 2048
 
-# Generar a partir de la clave privada en MyRootCA el fichero con clave publica MyRootCA.pem
+## Generar a partir de la clave privada en MyRootCA el fichero con clave publica MyRootCA.pem
 openssl req -x509 -new -nodes -key MyRootCA.key -sha256 -days 1024 -out MyRootCA.pem
 
-# Convertir MyRootCA.pem en MyRootCA.crt para Windows
+## Convertir MyRootCA.pem en MyRootCA.crt para Windows
 openssl x509 -outform der -in MyRootCA.pem -out MyRootCA.crt
 
-# Convertir MyRootCA.key en MyRootCA.csr (Solicitud de Firmar un Certificado)
+## Convertir MyRootCA.key en MyRootCA.csr (Solicitud de Firmar un Certificado)
 openssl req -new -key MyRootCA.key -out MyRootCA.csr
 
 # Convertir MyRootCA.pem en MyRootCA.der
