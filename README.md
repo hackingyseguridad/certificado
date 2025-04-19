@@ -1,4 +1,6 @@
+## Certificado digital 
 
+Los certificados digitales permiten: verificar, certificar la identidad de una persona o servidor (evitando suplantaciones). El Certificado contiene una serie de datos como: Datos del titular (nombre, organización, etc.). Clave pública (para cifrado y verificación de firmas). Firma digital de la Entidad Certificadora que valida su autenticidad. Fecha de validez (vigencia del certificado). El certificado digital para ello debe ser emitido por una Entidad certificadora de confianza, publica o privada.
 
 ## Entidad certificadora (CA) inspección del Certificado:
 
