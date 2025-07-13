@@ -20,3 +20,9 @@ openssl x509 -outform der -in /etc/ssl/certs/MyRootCA.pem -out /etc/ssl/certs/My
 # cp MyRootCA.pem /etc/ssl/certs/MyRootCA.pem
 # cp MyRootCA.key /etc/ssl/private/MyRootCA.key
 # cp MyRootCA.crt /etc/ssl/certs/MyRootCA.crt
+
+# ServerName hackingyseguridad
+# DocumentRoot /var/www/html/
+# SSLEngine on
+# SSLCertificateFile /etc/ssl/certs/MyRootCA.crt
+# SSLCertificateKeyFile /etc/ssl/private/MyRootCA.key
