@@ -9,7 +9,7 @@
 | Validación | (path building y validación de extensiones) debe seguir estrictamente el estándar RFC 5280. |
 | Revocación | Implementar verificación en tiempo real mediante OCSP (Online Certificate Status Protocol) o listas de revocación CRLs. |
 | Protocolo | Implementar TLS bidireccional: tanto el servidor como el cliente deben presentar y validar sus respectivos certificados. TLS 1.2 o TLS 1.3. Se deben deshabilitar explícitamente SSLv2, SSLv3, TLS 1.0 y TLS 1.1. |
-| Curvas Elípticas (ECC) | Uso de ECDSA con curvas seguras (ej. P-256 o P-384) como alternativa más eficiente y fuerte que RSA. |
+| Curva elíptica ECC | Uso de ECDSA con curvas seguras (ej. P-256 o P-384) como alternativa más eficiente y fuerte que RSA. |
 | Key Exchange | Usar DHE o ECDHE (Forward Secrecy). No usar PSK (claves pre-compartidas), ni RSA 1024/DH/ECDH estáticos. La clave privada debe estar cifrada (AES-256). Usar claves públicas con fortaleza superior a 112 bits. Para categoría ALTA del ENS o sistemas clasificados, usar una fortaleza superior a 128 bits (RSA ≥ 3072 bits, ECDSA ≥ 256 bits). Longitud mínima de 2048 bits. Se recomienda 4096 bits para máxima seguridad frente a la evolución del cómputo. |
 | Negociación | Soporte obligatorio de la extensión Supported_Groups para negociar algoritmos de intercambio de llaves de forma segura. |
 | Política de Rechazo | El cliente y el servidor deben abortar la conexión si el certificado está caducado, revocado o si no se puede verificar su estado. Revocación: Consultar al responder OCSP de la CA si el certificado ha sido marcado como "no válido" antes de su fecha de expiración. OCSP Stapling: OCSP firmada de la CA, evitando que el cliente tenga que contactar a la CA directamente. |
