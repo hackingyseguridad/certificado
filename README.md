@@ -6,7 +6,7 @@
 | Vigencia | No debe superar los 2 años (398 días o menos). Periodos largos (10-30 años) impiden la agilidad criptográfica y aumentan el riesgo de compromiso. |
 | Entidad certificadora emisora (CA) | Debe ser emitido por una Autoridad de Certificación (CA) de confianza reconocida. Un certificado auto-firmado no ofrece una cadena de confianza verificable por terceros. Esto facilita los ataques de Man-in-the-Middle (MitM), ya que cualquier atacante puede generar su propio certificado auto-firmado y suplantar la identidad del servidor sin que el cliente tenga una forma automatizada de desconfiar. |
 | Confianza | Al menos 3 niveles: CA Raíz (Root), CA Intermedia y Certificado Final (Leaf). |
-| Validación | El proceso de validación (path building y validación de extensiones) debe seguir estrictamente el estándar RFC 5280. |
+| Validación | proceso (path building y validación de extensiones) debe seguir estrictamente el estándar RFC 5280. |
 | Revocación | Implementar verificación en tiempo real mediante OCSP (Online Certificate Status Protocol) o listas de revocación CRLs. |
 | Protocolo | Implementar TLS bidireccional: tanto el servidor como el cliente deben presentar y validar sus respectivos certificados. TLS 1.2 o TLS 1.3. Se deben deshabilitar explícitamente SSLv2, SSLv3, TLS 1.0 y TLS 1.1. |
 | Curvas Elípticas (ECC) | Uso de ECDSA con curvas seguras (ej. P-256 o P-384) como alternativa más eficiente y fuerte que RSA. |
