@@ -1,6 +1,6 @@
 ##  Certificado digital, recomendaciones de seguridad
 
-| Certificado digital | Recomendación seguridad |
+| Certificado | Recomendación |
 |---------------------|--------------------------|
 | Comodín | El certificado debe ser emitido para la literalidad del FQDN nombre completo, evitando utilizar un mismo certificado como comodín para múltiples sitios con `*.dominio` (WildCard). |
 | Vigencia | No debe superar los 2 años (398 días o menos). Periodos largos (10-30 años) impiden la agilidad criptográfica y aumentan el riesgo de compromiso. |
