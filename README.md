@@ -1,19 +1,21 @@
-## Recomendaciones
+##  Certificado digital, recomendaciones de seguridad
 
-Certificado digital,Recomendación de seguridad
-Comodín,"El certificado debe ser emitido para la literalidad del FQDN nombre completo, evitando utilizar un mismo certificado como comodín para múltiples sitios con *.dominio (WildCard)."
-Vigencia,No debe superar los 2 años (recomendado 398 días o menos). Periodos largos (10-30 años) impiden la agilidad criptográfica y aumentan el riesgo de compromiso.
-Entidad Emisora (CA),Debe ser emitido por una Autoridad de Certificación (CA) de confianza reconocida. Un certificado auto-firmado no ofrece una cadena de confianza verificable por terceros. Esto facilita los ataques de Man-in-the-Middle (MitM).
-Confianza,"Debe soportar una cadena de al menos 3 niveles: CA Raíz (Root), CA Intermedia y Certificado Final (Leaf)."
-Validación,El proceso de validación (path building y validación de extensiones) debe seguir estrictamente el estándar RFC 5280.
-Revocación,Implementar verificación en tiempo real mediante OCSP (Online Certificate Status Protocol) o listas de revocación CRLs.
-Protocolo,"Implementar TLS bidireccional: tanto el servidor como el cliente deben presentar y validar sus respectivos certificados. TLS 1.2 o TLS 1.3. Se deben deshabilitar explícitamente SSLv2, SSLv3, TLS 1.0 y TLS 1.1."
-Curvas Elípticas (ECC),Uso de ECDSA con curvas seguras (ej. P-256 o P-384) como alternativa más eficiente y fuerte que RSA.
-Key Exchange,"Usar DHE o ECDHE (Forward Secrecy). No usar PSK, ni RSA 1024/DH/ECDH estáticos. La clave privada debe estar cifrada (AES-256). Para categoría ALTA del ENS, usar fortaleza > 128 bits (RSA ≥ 3072 bits, ECDSA ≥ 256 bits)."
-Negociación,Soporte obligatorio de la extensión Supported_Groups para negociar algoritmos de intercambio de llaves de forma segura.
-Política de Rechazo,El cliente y el servidor deben abortar la conexión si el certificado está caducado o revocado. Uso de OCSP Stapling para evitar que el cliente contacte a la CA directamente.
-Autenticación Web/SSH,Uso de certificados X.509v3 (RSA o ECDSA). La clave pública se envía al cliente y la clave privada permanece en el servidor.
-HSTS,"HTTP Strict Transport Security. Una cabecera de servidor que obliga al navegador a comunicarse siempre vía HTTPS, evitando ataques de downgrade e interceptación de SNI."
+| Certificado digital | Recomendación seguridad |
+|---------------------|--------------------------|
+| Comodín | El certificado debe ser emitido para la literalidad del FQDN nombre completo, evitando utilizar un mismo certificado como comodín para múltiples sitios con `*.dominio` (WildCard). |
+| Vigencia | No debe superar los 2 años (398 días o menos). Periodos largos (10-30 años) impiden la agilidad criptográfica y aumentan el riesgo de compromiso. |
+| Entidad Emisora (CA) | Debe ser emitido por una Autoridad de Certificación (CA) de confianza reconocida. Un certificado auto-firmado no ofrece una cadena de confianza verificable por terceros. Esto facilita los ataques de Man-in-the-Middle (MitM), ya que cualquier atacante puede generar su propio certificado auto-firmado y suplantar la identidad del servidor sin que el cliente tenga una forma automatizada de desconfiar. |
+| Confianza | Debe soportar una cadena de al menos 3 niveles: CA Raíz (Root), CA Intermedia y Certificado Final (Leaf). |
+| Validación | El proceso de validación (path building y validación de extensiones) debe seguir estrictamente el estándar RFC 5280. |
+| Revocación | Implementar verificación en tiempo real mediante OCSP (Online Certificate Status Protocol) o listas de revocación CRLs. |
+| Protocolo | Implementar TLS bidireccional: tanto el servidor como el cliente deben presentar y validar sus respectivos certificados. TLS 1.2 o TLS 1.3. Se deben deshabilitar explícitamente SSLv2, SSLv3, TLS 1.0 y TLS 1.1. |
+| Curvas Elípticas (ECC) | Uso de ECDSA con curvas seguras (ej. P-256 o P-384) como alternativa más eficiente y fuerte que RSA. |
+| Key Exchange | Usar DHE o ECDHE (Forward Secrecy). No usar PSK (claves pre-compartidas), ni RSA 1024/DH/ECDH estáticos. La clave privada debe estar cifrada (AES-256). Usar claves públicas con fortaleza superior a 112 bits. Para categoría ALTA del ENS o sistemas clasificados, usar una fortaleza superior a 128 bits (RSA ≥ 3072 bits, ECDSA ≥ 256 bits). Longitud mínima de 2048 bits. Se recomienda 4096 bits para máxima seguridad frente a la evolución del cómputo. |
+| Negociación | Soporte obligatorio de la extensión Supported_Groups para negociar algoritmos de intercambio de llaves de forma segura. |
+| Política de Rechazo | El cliente y el servidor deben abortar la conexión si el certificado está caducado, revocado o si no se puede verificar su estado. Revocación: Consultar al responder OCSP de la CA si el certificado ha sido marcado como "no válido" antes de su fecha de expiración. OCSP Stapling: OCSP firmada de la CA, evitando que el cliente tenga que contactar a la CA directamente. |
+| Autenticación Web/SSH | Uso de certificados X.509v3 (RSA o ECDSA). La clave pública se envía al cliente (navegador) y la clave privada se queda en el servidor. |
+| HSTS | HTTP Strict Transport Security. Una cabecera de servidor que obliga al navegador a comunicarse siempre vía HTTPS, desde el inicio, evitando ataques de downgrade y que alguien pueda interceptar el SNI. |
+
 
 
 ## Certificado digital 
