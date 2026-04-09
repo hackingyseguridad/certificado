@@ -4,7 +4,7 @@
 |---------------------|--------------------------|
 | Comodín | El certificado debe ser emitido para la literalidad del FQDN nombre completo, evitando utilizar un mismo certificado como comodín para múltiples sitios con `*.dominio` (WildCard). |
 | Vigencia | No debe superar los 2 años (398 días o menos). Periodos largos (10-30 años) impiden la agilidad criptográfica y aumentan el riesgo de compromiso. |
-| Entidad Emisora (CA) | Debe ser emitido por una Autoridad de Certificación (CA) de confianza reconocida. Un certificado auto-firmado no ofrece una cadena de confianza verificable por terceros. Esto facilita los ataques de Man-in-the-Middle (MitM), ya que cualquier atacante puede generar su propio certificado auto-firmado y suplantar la identidad del servidor sin que el cliente tenga una forma automatizada de desconfiar. |
+| Entidad certificadora emisora (CA) | Debe ser emitido por una Autoridad de Certificación (CA) de confianza reconocida. Un certificado auto-firmado no ofrece una cadena de confianza verificable por terceros. Esto facilita los ataques de Man-in-the-Middle (MitM), ya que cualquier atacante puede generar su propio certificado auto-firmado y suplantar la identidad del servidor sin que el cliente tenga una forma automatizada de desconfiar. |
 | Confianza | Al menos 3 niveles: CA Raíz (Root), CA Intermedia y Certificado Final (Leaf). |
 | Validación | El proceso de validación (path building y validación de extensiones) debe seguir estrictamente el estándar RFC 5280. |
 | Revocación | Implementar verificación en tiempo real mediante OCSP (Online Certificate Status Protocol) o listas de revocación CRLs. |
