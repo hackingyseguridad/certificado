@@ -1,3 +1,21 @@
+## Recomendaciones
+
+Certificado digital,Recomendación de seguridad
+Comodín,"El certificado debe ser emitido para la literalidad del FQDN nombre completo, evitando utilizar un mismo certificado como comodín para múltiples sitios con *.dominio (WildCard)."
+Vigencia,No debe superar los 2 años (recomendado 398 días o menos). Periodos largos (10-30 años) impiden la agilidad criptográfica y aumentan el riesgo de compromiso.
+Entidad Emisora (CA),Debe ser emitido por una Autoridad de Certificación (CA) de confianza reconocida. Un certificado auto-firmado no ofrece una cadena de confianza verificable por terceros. Esto facilita los ataques de Man-in-the-Middle (MitM).
+Confianza,"Debe soportar una cadena de al menos 3 niveles: CA Raíz (Root), CA Intermedia y Certificado Final (Leaf)."
+Validación,El proceso de validación (path building y validación de extensiones) debe seguir estrictamente el estándar RFC 5280.
+Revocación,Implementar verificación en tiempo real mediante OCSP (Online Certificate Status Protocol) o listas de revocación CRLs.
+Protocolo,"Implementar TLS bidireccional: tanto el servidor como el cliente deben presentar y validar sus respectivos certificados. TLS 1.2 o TLS 1.3. Se deben deshabilitar explícitamente SSLv2, SSLv3, TLS 1.0 y TLS 1.1."
+Curvas Elípticas (ECC),Uso de ECDSA con curvas seguras (ej. P-256 o P-384) como alternativa más eficiente y fuerte que RSA.
+Key Exchange,"Usar DHE o ECDHE (Forward Secrecy). No usar PSK, ni RSA 1024/DH/ECDH estáticos. La clave privada debe estar cifrada (AES-256). Para categoría ALTA del ENS, usar fortaleza > 128 bits (RSA ≥ 3072 bits, ECDSA ≥ 256 bits)."
+Negociación,Soporte obligatorio de la extensión Supported_Groups para negociar algoritmos de intercambio de llaves de forma segura.
+Política de Rechazo,El cliente y el servidor deben abortar la conexión si el certificado está caducado o revocado. Uso de OCSP Stapling para evitar que el cliente contacte a la CA directamente.
+Autenticación Web/SSH,Uso de certificados X.509v3 (RSA o ECDSA). La clave pública se envía al cliente y la clave privada permanece en el servidor.
+HSTS,"HTTP Strict Transport Security. Una cabecera de servidor que obliga al navegador a comunicarse siempre vía HTTPS, evitando ataques de downgrade e interceptación de SNI."
+
+
 ## Certificado digital 
 
 Los certificados digitales permiten: verificar, certificar la identidad de una persona o servidor (evitando suplantaciones). El Certificado contiene una serie de datos como: Datos del titular (nombre, organización, etc.). Clave pública (para cifrado y verificación de firmas). Firma digital de la Entidad Certificadora que valida su autenticidad. Fecha de validez (vigencia del certificado). El certificado digital para ello debe ser emitido por una Entidad certificadora de confianza, publica o privada.
