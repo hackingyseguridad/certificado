@@ -115,6 +115,8 @@ autocert.go'.
 
 #
 https://github.com/hackingyseguridad/cifrados
+
+https://github.com/hackingyseguridad/cifrados/blob/main/ciffrados.md
 #
 http://www.hackingyseguridad.com/
 #
