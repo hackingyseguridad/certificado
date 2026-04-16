@@ -1,7 +1,7 @@
 #!/bin/sh
-# Verifica entidad certicadora CA de un dominio
+# Verifica CA entidad certicadora , un dominio o fqdn
 
-DOMAIN="$1"
+DO MAIN="$1"
 TEMP_CERT="/tmp/cert_$$.pem"
 TEMP_CHAIN="/tmp/chain_$$.pem"
 
