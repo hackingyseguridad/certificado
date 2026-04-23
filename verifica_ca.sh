@@ -59,7 +59,9 @@ if [ $TRUSTED -eq 0 ] && [ -n "$CA_FILE" ]; then
     fi
 fi
 
-echo $1 
+echo
+l s_client -connect ejemplo.com:443 -servername $1 2>/dev/null \
+| openssl x509 -noout -subject -issuer
 echo
 if [ $TRUSTED -eq 1 ]; then
     echo "CERTIFICADO CONFIABLE !!!"
