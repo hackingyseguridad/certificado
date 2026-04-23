@@ -24,7 +24,7 @@ EOF
 echo
 nmap  -Pn -p 110,993,995,143,443,587,465,5061,8000,7443,8443,8080,8888,10443 --open --script=ssl-cert $1 $2 --defeat-rst-ratelimit
 echo
-echo "buscando subdominios/fqdn de: ", $1
+echo "buscando subdominios/fqdn de: " $1
 sublist3r -d $1
 DOMAIN="$1"
 
