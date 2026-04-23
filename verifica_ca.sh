@@ -4,7 +4,17 @@
 echo
 
 cat << 'EOF'
-verifica confiabilidad de la CA entidad certificadora (PKI) de un dominio o FQDN
+Verifica confiabilidad de la CA entidad certificadora (PKI) de un dominio o FQDN
+Conecta al puerto 443 del dominio dado y extrae la cadena de certificados (incluyendo posibles intermediarios) usando openssl s_client.
+
+1: Valida el certificado directamente contra el almacén de CA del sistema.
+2: Verifica si el certificado es autónomo (autofirmado o cadena completa incluida).
+3: Extrae posibles certificados intermedios del chain recibido y usarlos con la CA raíz del sistema para validar el certificado final.
+
+Muestra la entidad emisora
+
+CONFIABLE si alguna de las tres validaciones anteriores tiene éxito, mostrando la razón.
+NO CONFIABLE si todas fallan.
 
 $$$$ $$$$ $$$$$$$$$$$$$$$$$ $$$$ $$$$$$$$$ $$$$$$$ $$$$$$$$$$$$$$$$$$$$$$$ $$ $$
 
