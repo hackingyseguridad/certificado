@@ -22,7 +22,8 @@ https://github.com/hackingyseguridad/certificado/
 EOF
 
 echo
-nmap $1 -Pn -sT -R --dns-servers 80.58.104.181 -p  110,993,995,143,443,587,465,5061,8000,7443,8443,8080,8888,10443 --open --script=ssl-cert | grep "Nmap\|DNS:"
+nmap  -Pn -p 110,993,995,143,443,587,465,5061,8000,7443,8443,8080,8888,10443 --open --script=ssl-cert $1 $2 --defeat-rst-ratelimit
+echo 
 
 DOMAIN="$1"
 
