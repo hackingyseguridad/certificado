@@ -1,5 +1,12 @@
 #!/bin/sh
 # Verifica confiabilidad de la CA Entidad Certicadora , un dominio o fqdn
+echo
+
+cat << 'EOF'
+verifica confiabilidad de la CA entidad certificadora (PKI) de un dominio o FQDN
+
+$$$$ $$$$ $$$$$$$$$$$$$$$$$ $$$$ $$$$$$$$$ $$$$$$$ $$$$$$$$$$$$$$$$$$$$$$$ $$ $$
+EOF
 
 DOMAIN="$1"
 echo
@@ -52,14 +59,14 @@ if [ $TRUSTED -eq 0 ] && [ -n "$CA_FILE" ]; then
     fi
 fi
 
-echo "========================================="
-echo "RESULTADO FINAL"
-echo "========================================="
+echo $1
 
 if [ $TRUSTED -eq 1 ]; then
-    echo "✓ CERTIFICADO CONFIABLE"
+    echo "CERTIFICADO CONFIABLE !!!"
     echo "  • Razón: $REASON"
 else
-    echo "✗ CERTIFICADO NO CONFIABLE"
+    echo "CERTIFICADO NO CONFIABLE !!!"
 fi
+
+
 
