@@ -1,11 +1,14 @@
 #!/bin/sh
 # Verifica confiabilidad de la CA Entidad Certicadora , un dominio o fqdn
+# https://github.com/hackingyseguridad/certificado/
 echo
 
 cat << 'EOF'
 verifica confiabilidad de la CA entidad certificadora (PKI) de un dominio o FQDN
 
 $$$$ $$$$ $$$$$$$$$$$$$$$$$ $$$$ $$$$$$$$$ $$$$$$$ $$$$$$$$$$$$$$$$$$$$$$$ $$ $$
+
+https://github.com/hackingyseguridad/certificado/
 EOF
 
 DOMAIN="$1"
