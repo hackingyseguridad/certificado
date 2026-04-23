@@ -10,9 +10,9 @@ EOF
 
 DOMAIN="$1"
 echo
-echo "================================================"
+echo "= DOMINIO ======================================="
 host $1
-echo "================================================"
+echo "================================================="
 echo
 TEMP_CERT="/tmp/cert_$$.pem"
 TEMP_CHAIN="/tmp/chain_$$.pem"
@@ -60,15 +60,17 @@ if [ $TRUSTED -eq 0 ] && [ -n "$CA_FILE" ]; then
 fi
 
 echo
-l s_client -connect ejemplo.com:443 -servername $1 2>/dev/null \
-| openssl x509 -noout -subject -issuer
+echo "= Entidad emoisora del certicado/CA ============="
+openssl s_client -connect $1:443 -servername $1 2>/dev/null \
+| openssl x509 -noout -issuer
+echo "================================================="
 echo
+
 if [ $TRUSTED -eq 1 ]; then
     echo "CERTIFICADO CONFIABLE !!!"
     echo "  • Razón: $REASON"
 else
     echo "CERTIFICADO NO CONFIABLE !!!"
 fi
-
 
 
