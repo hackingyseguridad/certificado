@@ -2,9 +2,13 @@
 # Verifica confiabilidad de la CA Entidad Certicadora , un dominio o fqdn
 
 DOMAIN="$1"
+echo
+echo "================================================"
+host $1
+echo "================================================"
+echo
 TEMP_CERT="/tmp/cert_$$.pem"
 TEMP_CHAIN="/tmp/chain_$$.pem"
-
 cleanup() { rm -f "$TEMP_CERT" "$TEMP_CHAIN" "$TEMP_CERT.intermediate" 2>/dev/null; }
 trap cleanup EXIT
 
