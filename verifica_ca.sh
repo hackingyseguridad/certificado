@@ -55,10 +55,9 @@ if [ $TRUSTED -eq 0 ] && [ -n "$CA_FILE" ]; then
     sed -n '2,$p' "$TEMP_CHAIN" > "$TEMP_CERT.intermediate"
     if openssl verify -untrusted "$TEMP_CERT.intermediate" -CAfile "$CA_FILE" "$TEMP_CERT" >/dev/null 2>&1; then
         TRUSTED=1
-        REASON="intermedia + raíz del sistema"
+        REASON="Hay al menos 3 niveles: CA Raíz (Root), CA Intermedia y Certificado Final (Leaf)."
     fi
 fi
-
 echo
 echo "= Entidad emoisora del certicado/CA ============="
 openssl s_client -connect $1:443 -servername $1 2>/dev/null \
