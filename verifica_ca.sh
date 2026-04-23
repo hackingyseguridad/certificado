@@ -59,8 +59,8 @@ if [ $TRUSTED -eq 0 ] && [ -n "$CA_FILE" ]; then
     fi
 fi
 
-echo $1
-
+echo $1 
+echo
 if [ $TRUSTED -eq 1 ]; then
     echo "CERTIFICADO CONFIABLE !!!"
     echo "  • Razón: $REASON"
