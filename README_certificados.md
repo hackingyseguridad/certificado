@@ -1268,9 +1268,9 @@ certificado/
 
 ---
 
-### Quick Start
+### Quick start
 
-### Generar CA raíz en 30 segundos
+### Generar CA raíz 
 
 ```bash
 openssl genrsa -out ca.key 2048
