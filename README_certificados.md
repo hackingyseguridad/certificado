@@ -1,10 +1,10 @@
-# 📜 Certificados Digitales - Guía Completa de PKI y CA
+### Certificados digitales - PKI y CA
 
 ![Hacking y Seguridad](http://hackingyseguridad.com/banner.png)
 
-> **Repositorio oficial de guía completa sobre certificados digitales, Autoridades Certificadoras (CA), infraestructura PKI y generación segura de certificados X.509.**
+> **certificados digitales, autoridades certificadoras (CA), infraestructura PKI y generación segura de certificados X.509.**
 
-## 📋 Tabla de Contenidos
+### Tabla de Contenidos
 
 - [Introducción](#introducción)
 - [¿Qué es un Certificado Digital?](#qué-es-un-certificado-digital)
@@ -25,16 +25,16 @@
 
 ---
 
-## Introducción
+### Introducción:
 
 Los certificados digitales son documentos electrónicos que:
 
-✅ **Verifican identidades** - Aseguran que eres quien dices ser  
-✅ **Cifran datos** - Protegen información mediante criptografía  
-✅ **Firman digitalmente** - Garantizan integridad y no-rechazo  
-✅ **Establecen confianza** - Crear cadenas de confianza verificables  
+**Verifican identidades** - Aseguran que eres quien dices ser  
+**Cifran datos** - Protegen información mediante criptografía  
+**Firman digitalmente** - Garantizan integridad y no-rechazo  
+**Establecen confianza** - Crear cadenas de confianza verificables  
 
-### 🎯 Objetivos de Este Repositorio
+### Objetivos de Este Repositorio
 
 1. **Entender** la estructura y funcionamiento de certificados X.509
 2. **Generar** certificados de forma segura (CA, servidores, clientes)
@@ -45,9 +45,9 @@ Los certificados digitales son documentos electrónicos que:
 
 ---
 
-## ¿Qué es un Certificado Digital?
+### Certificado Digital
 
-### 📋 Definición y Componentes
+### Componentes
 
 Un certificado digital es un archivo que contiene:
 
@@ -63,7 +63,7 @@ Un certificado digital es un archivo que contiene:
 | **Extensiones** | Información adicional (SAN, EKU, etc.) | `subjectAltName` |
 | **Huella Digital** | Hash único del certificado | SHA-256 |
 
-### 🏗️ Estructura Jerárquica de PKI
+### Estructura Jerárquica de PKI
 
 ```
                     ┌─────────────────┐
@@ -86,9 +86,9 @@ Un certificado digital es un archivo que contiene:
 
 ---
 
-## Tipos de Certificados
+### Tipos de certificados
 
-### 🏢 Certificados de Servidor
+### Certificados de Servidor
 
 Se usan para autenticar servidores web, mail, VPN, etc.
 
@@ -102,14 +102,14 @@ Se usan para autenticar servidores web, mail, VPN, etc.
 
 **Características DV (Let's Encrypt)**:
 ```
-✅ Validación automática
-✅ Renovación automática cada 90 días
-✅ Gratis y confiable
-✅ Ideal para desarrolladores
-❌ No verifica organización
+Validación automática
+Renovación automática cada 90 días
+Gratis y confiable
+Ideal para desarrolladores
+No verifica organización
 ```
 
-### 👤 Certificados de Cliente
+###  Certificados de Cliente
 
 Autentican usuarios o aplicaciones en conexiones TLS mutuas.
 
@@ -121,7 +121,7 @@ Autentican usuarios o aplicaciones en conexiones TLS mutuas.
 | **Renovación** | Manual o automática según CA |
 | **S/MIME** | Firma y cifrado de correos electrónicos |
 
-### 🔓 Certificados Auto-Firmados
+### Certificados Auto-Firmados
 
 Certificados donde el emisor es el propietario.
 
@@ -129,15 +129,15 @@ Certificados donde el emisor es el propietario.
 |----------------|-------|
 | **Firma de** | Sí mismo (auto-firmware) |
 | **Cadena de confianza** | No existe (root = sí mismo) |
-| **Validación automática** | ❌ No (navegador advierte) |
-| **Seguridad MitM** | ❌ Vulnerable sin validación manual |
+| **Validación automática** |  No (navegador advierte) |
+| **Seguridad MitM** |  Vulnerable sin validación manual |
 | **Uso** | Testing, desarrollo, infraestructura privada |
 | **Ventaja** | Gratis, rápido, sin dependencias |
 | **Desventaja** | No proporciona confianza a terceros |
 
-**⚠️ REGLA**: Nunca usar auto-firmados en producción pública.
+**IMPORTANTE**: Nunca usar auto-firmados en producción con exposicion publica.
 
-### 🌐 Certificados Especiales
+### Certificados Especiales
 
 | Tipo | Descripción | Casos de Uso |
 |------|-------------|------------|
@@ -150,9 +150,9 @@ Certificados donde el emisor es el propietario.
 
 ---
 
-## Infraestructura PKI
+### Infraestructura PKI
 
-### 🏛️ Componentes de una PKI Completa
+### Componentes de una PKI Completa
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -190,7 +190,7 @@ Certificados donde el emisor es el propietario.
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### 🏢 Niveles de Confianza Recomendados
+### Niveles de Confianza Recomendados
 
 | Nivel | Descripción | Seguridad | Ejemplo |
 |-------|-------------|----------|---------|
@@ -203,9 +203,9 @@ Certificados donde el emisor es el propietario.
 
 ---
 
-## Extensiones y Formatos
+### Extensiones y Formatos
 
-### 📦 Formatos de Certificados
+### Formatos de Certificados
 
 | Extensión | Formato | Codificación | Contenido | Soporte |
 |-----------|---------|--------------|----------|---------|
@@ -221,7 +221,7 @@ Certificados donde el emisor es el propietario.
 | **.csr** | PKCS#10 | PEM | Solicitud de firma de certificado | 🌍 Universal |
 | **.jks** | Java | Binario | Almacén de certificados Java | Java solo |
 
-### 📋 Estructura de Archivo PEM
+### Estructura de Archivo PEM
 
 ```
 -----BEGIN CERTIFICATE-----
@@ -239,7 +239,7 @@ kJOy3S7qhHZ1yI8xFxdR=
 -----END PRIVATE KEY-----
 ```
 
-### 🔑 Archivo KEY
+### Archivo KEY
 
 ```
 -----BEGIN RSA PRIVATE KEY-----
@@ -249,7 +249,7 @@ MIIEpAIBAAKCAQEA1234567890...
 -----END RSA PRIVATE KEY-----
 ```
 
-### ✍️ Archivo CSR (Certificate Signing Request)
+### Archivo CSR (Certificate Signing Request)
 
 ```
 -----BEGIN CERTIFICATE REQUEST-----
@@ -263,20 +263,20 @@ MIICkzCCAXsCAQAwRTELMAkGA1UEBhMCQVU...
 
 ## Recomendaciones de Seguridad
 
-### 🎯 Matriz de Decisión: Algoritmo y Tamaño de Clave
+### Matriz de Decisión: Algoritmo y Tamaño de Clave
 
 | Contexto | Algoritmo | Tamaño | Validez | OCSP | Recomendación |
 |----------|-----------|--------|---------|------|---|
-| **HTTPS Público** | RSA | ≥2048 | 1 año | ✅ Sí | Use Let's Encrypt (gratuito) |
-| **HTTPS Público** | ECDSA | P-256+ | 1 año | ✅ Sí | 🟢 Mejor que RSA (más rápido) |
-| **SSH Servidor** | Ed25519 | 256 bits | N/A | N/A | 🟢 Óptimo |
-| **Base de Datos** | RSA | ≥2048 | 2-3 años | ✅ Sí | Si es TLS |
-| **VPN/IPsec** | ECDSA | P-256+ | 1-2 años | ✅ Sí | 🟢 Recomendado |
-| **Cliente TLS Mutuo** | RSA | ≥2048 | 1 año | ⚠️ Opcional | Validación servidor necesaria |
-| **Firma Código** | RSA | ≥3072 | 3 años | ✅ Sí | Timestamp obligatorio |
-| **Correo S/MIME** | RSA | ≥2048 | 1-3 años | ⚠️ Opcional | Validación de identidad |
+| **HTTPS Público** | RSA | ≥2048 | 1 año |  Sí | Use Let's Encrypt (gratuito) |
+| **HTTPS Público** | ECDSA | P-256+ | 1 año |  Sí |  Mejor que RSA (más rápido) |
+| **SSH Servidor** | Ed25519 | 256 bits | N/A | N/A |  Óptimo |
+| **Base de Datos** | RSA | ≥2048 | 2-3 años |  Sí | Si es TLS |
+| **VPN/IPsec** | ECDSA | P-256+ | 1-2 años |  Sí |  Recomendado |
+| **Cliente TLS Mutuo** | RSA | ≥2048 | 1 año | Opcional | Validación servidor necesaria |
+| **Firma Código** | RSA | ≥3072 | 3 años |  Sí | Timestamp obligatorio |
+| **Correo S/MIME** | RSA | ≥2048 | 1-3 años |  Opcional | Validación de identidad |
 
-### 📋 Tabla de Recomendaciones de Seguridad (ENS Nivel ALTO)
+### Tabla de Recomendaciones de Seguridad (ENS Nivel ALTO)
 
 | Aspecto | Recomendación | Mínimo | Óptimo | Por qué |
 |--------|---------------|--------|---------|---------|
@@ -310,9 +310,9 @@ MIICkzCCAXsCAQAwRTELMAkGA1UEBhMCQVU...
 
 ---
 
-## Guía Paso a Paso
+### Guía Paso a Paso
 
-### 1️⃣ Crear CA Raíz (Autoridad Certificadora)
+### Crear CA Raíz (Autoridad Certificadora)
 
 #### Paso 1: Generar clave privada RSA (2048 bits)
 
@@ -355,7 +355,7 @@ openssl req -x509 -new -nodes \
 openssl x509 -in ca.crt -text -noout
 ```
 
-### 2️⃣ Crear Certificado Intermedio
+### Crear Certificado Intermedio
 
 #### Paso 1: Generar clave privada
 
@@ -397,7 +397,7 @@ openssl x509 -req \
 
 **Archivo generado**: `intermediate.crt` (certificado intermedio)
 
-### 3️⃣ Crear Certificado de Servidor
+### Crear Certificado de Servidor
 
 #### Paso 1: Generar clave privada
 
@@ -442,7 +442,7 @@ openssl x509 -req \
 - `server.key` - Clave privada (GUARDAR SEGURO)
 - `server.crt` - Certificado servidor
 
-### 4️⃣ Crear Certificado de Cliente
+###  Crear Certificado de Cliente
 
 #### Paso 1: Generar clave privada
 
@@ -482,7 +482,7 @@ openssl x509 -req \
   -extfile client.ext
 ```
 
-### 5️⃣ Crear Cadena de Certificados
+### Crear Cadena de Certificados
 
 Combinar certificados para presentar al cliente:
 
@@ -494,7 +494,7 @@ cat intermediate.crt ca.crt > ca-chain.crt
 cat server.crt intermediate.crt ca.crt > fullchain.pem
 ```
 
-### 6️⃣ Conversiones de Formato
+### Conversiones de Formato
 
 #### PEM → DER (binario)
 
@@ -521,7 +521,7 @@ openssl pkcs12 -in certificado.pfx -out certificado.pem -nodes
 
 ---
 
-## Scripts Disponibles
+### Scripts Disponibles
 
 ### 🔧 Script: generacert.sh
 
@@ -649,9 +649,9 @@ sudo sh instalar.sh
 
 ---
 
-## Herramientas OpenSSL
+### Herramientas OpenSSL
 
-### 🔍 Comandos Esenciales
+###  Comandos Esenciales
 
 #### Ver detalles de un certificado
 
@@ -736,7 +736,7 @@ openssl dgst -sha256 -sign private.key datos.txt > firma.sig
 openssl dgst -sha256 -verify public.key -signature firma.sig datos.txt
 ```
 
-### 📊 Tabla de Comandos OpenSSL Comunes
+###  Tabla de Comandos OpenSSL Comunes
 
 | Tarea | Comando | Archivo Input | Archivo Output |
 |-------|---------|---------------|----------------|
@@ -756,9 +756,9 @@ openssl dgst -sha256 -verify public.key -signature firma.sig datos.txt
 
 ---
 
-## Validación y Verificación
+## Validación 
 
-### ✅ Validar un Certificado
+### Validar un certificado
 
 #### 1. Verificar que está dentro de vigencia
 
@@ -801,7 +801,7 @@ openssl x509 -in cert.pem -text -noout | grep -A5 "X509v3 extensions"
 - `authorityKeyIdentifier` - ID clave de la CA
 - `subjectKeyIdentifier` - ID clave del certificado
 
-### 🔍 Auditar Certificado (Checklist)
+### Auditar Certificado (Checklist)
 
 ```bash
 #!/bin/bash
@@ -835,7 +835,7 @@ openssl verify -CAfile ca.pem $CERT && echo "✅ Cadena válida" || echo "❌ Ca
 
 ---
 
-## Cadena de Certificados
+### Cadena de Certificados
 
 ### 🔗 Estructura de una Cadena Válida
 
@@ -861,7 +861,7 @@ cat server.crt intermediate.crt ca.crt > chain.pem
 cat server.crt intermediate.crt > bundle.pem
 ```
 
-### ✅ Validar Cadena
+###  Validar Cadena
 
 ```bash
 openssl verify -CAfile ca.crt -untrusted intermediate.crt server.crt
@@ -869,7 +869,7 @@ openssl verify -CAfile ca.crt -untrusted intermediate.crt server.crt
 
 **Salida correcta**: `server.crt: OK`
 
-### 🌐 Verificar cadena en servidor web
+### Verificar cadena en servidor web
 
 #### Apache
 
@@ -905,7 +905,7 @@ bind :443 ssl crt /path/to/server.pem
 | **OCSP** | Query | ~Minutos | Alta | Moderno |
 | **OCSP Stapling** | Cached | ~Minutos | Muy Alta | Óptimo |
 
-### 🔴 Revocar un Certificado
+###  Revocar un certificado
 
 #### Paso 1: Crear base de datos de revocación (CA)
 
@@ -942,7 +942,7 @@ openssl ca -gencrl \
 openssl crl -in ca.crl -text -noout
 ```
 
-### 🔍 Verificar Revocación
+### Verificar revocación
 
 #### Mediante CRL
 
@@ -969,7 +969,7 @@ openssl ocsp -issuer ca.pem -cert cert.pem -url http://ocsp.ca.com
 
 ## Post-Cuántico
 
-### 🔮 Algoritmos Post-Cuánticos Recomendados
+### Algoritmos post-cuanticos recomendados
 
 | Algoritmo | Tipo | Tamaño | Estado | Recomendación |
 |-----------|------|--------|--------|--|
@@ -979,7 +979,7 @@ openssl ocsp -issuer ca.pem -cert cert.pem -url http://ocsp.ca.com
 | **SLH-DSA** (SPHINCS+) | Firma | Variable | 🟢 NIST 2024 | Stateless |
 | **Falcon** | Firma | 897 bytes | 🟢 NIST 2024 | Compacto |
 
-### 🔄 Estrategia de Migración
+###  Estrategia de Migración
 
 **Fase 1 (2024-2025)**: Algoritmos clásicos fortalecidos
 ```bash
@@ -1001,7 +1001,7 @@ openssl req -new -x509 \
 # Certificados con ML-DSA cuando esté disponible
 ```
 
-### 📄 Archivo postcuanticos.txt
+###  Archivo postcuanticos.txt
 
 Contiene recomendaciones actualizadas sobre algoritmos post-cuánticos.
 
@@ -1009,7 +1009,7 @@ Contiene recomendaciones actualizadas sobre algoritmos post-cuánticos.
 
 ## Casos de Uso
 
-### 🌐 Caso 1: Sitio Web HTTPS (Let's Encrypt)
+###  Caso 1: Sitio Web HTTPS (Let's Encrypt)
 
 **Objetivo**: Proteger sitio web con certificado DV
 
@@ -1044,7 +1044,7 @@ server {
 }
 ```
 
-### 🔒 Caso 2: VPN con Certificados Personalizados
+###  Caso 2: VPN con Certificados Personalizados
 
 **Objetivo**: PKI privada para VPN empresarial
 
@@ -1072,7 +1072,7 @@ cp vpn-server.crt /etc/openvpn/server.crt
 cp vpn-server.key /etc/openvpn/server.key
 ```
 
-### 🔐 Caso 3: TLS Mutuo (Cliente + Servidor)
+###  Caso 3: TLS Mutuo (Cliente + Servidor)
 
 **Objetivo**: Autenticación bidireccional segura
 
@@ -1106,7 +1106,7 @@ SSLVerifyClient require
 SSLVerifyDepth 2
 ```
 
-### 📧 Caso 4: Firma de Correo Electrónico (S/MIME)
+###  Caso 4: Firma de Correo Electrónico (S/MIME)
 
 ```bash
 # Crear certificado S/MIME
@@ -1133,7 +1133,7 @@ openssl smime -verify -in mensaje.smime \
   -CAfile MyRootCA.pem
 ```
 
-### 🖥️ Caso 5: Certificado Auto-Firmado Local (Desarrollo)
+###  Caso 5: Certificado Auto-Firmado Local (Desarrollo)
 
 ```bash
 # Generar en UN comando
@@ -1163,9 +1163,9 @@ https.createServer(options, (req, res) => {
 
 ---
 
-## Solución de Problemas
+### Solucion:
 
-### ❌ Problemas Comunes
+###  Problemas comunes
 
 | Problema | Causa | Solución |
 |----------|-------|----------|
@@ -1219,7 +1219,7 @@ openssl req -in cert.csr -text -noout | grep -A10 "Requested Extensions"
 
 ## Referencias
 
-### 📚 Estándares Oficiales
+### Estándares Oficiales
 
 - 🔗 [RFC 5280](https://tools.ietf.org/html/rfc5280) - X.509 PKI Certificate and CRL Profile
 - 🔗 [RFC 6234](https://tools.ietf.org/html/rfc6234) - US Secure Hash Algorithms
@@ -1227,14 +1227,14 @@ openssl req -in cert.csr -text -noout | grep -A10 "Requested Extensions"
 - 🔗 [RFC 6960](https://tools.ietf.org/html/rfc6960) - OCSP Protocol
 - 🔗 [X.690](https://www.itu.int/rec/T-REC-X.690/en) - DER Encoding
 
-### 🔒 Guías de Seguridad
+###  Guías de Seguridad
 
 - 🛡️ [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/)
 - 🛡️ [OWASP - Cryptographic Failures](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)
 - 🛡️ [NIST SP 800-175B](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-175B.pdf)
 - 🛡️ [NCSC Guidelines](https://www.ncsc.gov.uk/collection/mobile-device-guidance/using-built-in-platform-features/tls-ssl-and-https)
 
-### 🛠️ Herramientas
+###  Herramientas
 
 - 🔧 [OpenSSL](https://www.openssl.org/) - Estándar de facto
 - 🔧 [Certbot](https://certbot.eff.org/) - Automatización Let's Encrypt
@@ -1242,7 +1242,7 @@ openssl req -in cert.csr -text -noout | grep -A10 "Requested Extensions"
 - 🔧 [cfssl](https://github.com/cloudflare/cfssl) - PKI toolkit Cloudflare
 - 🔧 [STEP CA](https://smallstep.com/certificates/) - PKI moderna
 
-### 📖 Lectura Recomendada
+### Lectura Recomendada
 
 - 📖 "Cryptography Engineering" - Ferguson, Schneier, Kohno
 - 📖 "Public Key Cryptography - Practice & Protocols" - Buchmann
@@ -1250,7 +1250,7 @@ openssl req -in cert.csr -text -noout | grep -A10 "Requested Extensions"
 
 ---
 
-## 📊 Estructura del Repositorio
+### Estructura del Repositorio
 
 ```
 certificado/
@@ -1272,29 +1272,29 @@ certificado/
 
 ---
 
-## 🚀 Quick Start
+### Quick Start
 
-### 1️⃣ Generar CA raíz en 30 segundos
+### Generar CA raíz en 30 segundos
 
 ```bash
 openssl genrsa -out ca.key 2048
 openssl req -x509 -new -nodes -key ca.key -sha256 -days 3650 -out ca.crt
 ```
 
-### 2️⃣ Crear certificado servidor
+### Crear certificado servidor
 
 ```bash
 openssl req -new -keyout server.key -out server.csr -nodes
 openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt -days 365 -sha256
 ```
 
-### 3️⃣ Verificar cadena
+### Verificar cadena
 
 ```bash
 openssl verify -CAfile ca.crt server.crt
 ```
 
-### 4️⃣ Ver detalles
+###  Ver detalles
 
 ```bash
 openssl x509 -in server.crt -text -noout
@@ -1302,13 +1302,13 @@ openssl x509 -in server.crt -text -noout
 
 ---
 
-## ⚖️ Licencia
+### Licencia
 
 Este proyecto está bajo licencia **GPL-3.0**. Consulta [LICENSE](LICENSE) para más detalles.
 
 ---
 
-## 📞 Contacto
+### Contacto
 
 - 🌐 **Sitio Web**: [www.hackingyseguridad.com](http://www.hackingyseguridad.com/)
 - 📧 **GitHub**: [hackingyseguridad](https://github.com/hackingyseguridad)
@@ -1316,20 +1316,3 @@ Este proyecto está bajo licencia **GPL-3.0**. Consulta [LICENSE](LICENSE) para 
 - 🔗 **Repositorio relacionado**: [Cifrados](https://github.com/hackingyseguridad/cifrados)
 
 ---
-
-## 📈 Estado del Proyecto
-
-| Aspecto | Estado |
-|--------|--------|
-| Última Actualización | Julio 2026 |
-| Versión | 2.0 |
-| Mantenimiento | 🟢 Activo |
-| Completitud | 🟢 Completo |
-| Cobertura TLS 1.3 | 🟢 Incluido |
-| Cobertura Post-Cuántico | 🟠 En Progreso |
-
----
-
-**🎯 Recuerda**: La seguridad es un proceso, no un producto. Actualiza y audita regularmente tus certificados.
-
-**Hecho con ❤️ por Hacking y Seguridad**
