@@ -1,13 +1,11 @@
 ### Certificados digitales - PKI y CA
 
-![Hacking y Seguridad](http://hackingyseguridad.com/banner.png)
-
 > **certificados digitales, autoridades certificadoras (CA), infraestructura PKI y generación segura de certificados X.509.**
 
 ### Tabla de Contenidos
 
 - [Introducción](#introducción)
-- [¿Qué es un Certificado Digital?](#qué-es-un-certificado-digital)
+- [Certificado Digital](#qué-es-un-certificado-digital)
 - [Tipos de Certificados](#tipos-de-certificados)
 - [Infraestructura PKI (Public Key Infrastructure)](#infraestructura-pki)
 - [Extensiones y Formatos](#extensiones-y-formatos)
@@ -261,9 +259,9 @@ MIICkzCCAXsCAQAwRTELMAkGA1UEBhMCQVU...
 
 ---
 
-## Recomendaciones de Seguridad
+### Recomendaciones de seguridad
 
-### Matriz de Decisión: Algoritmo y Tamaño de Clave
+### Matriz de algoritmo y tamaño de clave
 
 | Contexto | Algoritmo | Tamaño | Validez | OCSP | Recomendación |
 |----------|-----------|--------|---------|------|---|
@@ -276,7 +274,7 @@ MIICkzCCAXsCAQAwRTELMAkGA1UEBhMCQVU...
 | **Firma Código** | RSA | ≥3072 | 3 años |  Sí | Timestamp obligatorio |
 | **Correo S/MIME** | RSA | ≥2048 | 1-3 años |  Opcional | Validación de identidad |
 
-### Tabla de Recomendaciones de Seguridad (ENS Nivel ALTO)
+### Tabla de recomendaciones de seguridad (ENS nivel alto)
 
 | Aspecto | Recomendación | Mínimo | Óptimo | Por qué |
 |--------|---------------|--------|---------|---------|
@@ -293,7 +291,7 @@ MIICkzCCAXsCAQAwRTELMAkGA1UEBhMCQVU...
 | **Clave Privada** | Cifrada AES-256 | Sí | AES-256 | Protección en disco |
 | **Hardware de Clave** | HSM/TPM si clasif. | Opcional | Sí | Máxima seguridad |
 
-### 🚫 Qué NO Hacer
+### NO Hacer
 
 | Configuración | Riesgo | Alternativa |
 |---------------|--------|------------|
@@ -756,7 +754,7 @@ openssl dgst -sha256 -verify public.key -signature firma.sig datos.txt
 
 ---
 
-## Validación 
+### Validación 
 
 ### Validar un certificado
 
@@ -851,7 +849,7 @@ CA Intermedia
 CA Raíz (Trusted)
 ```
 
-### 📦 Crear Cadena Completa
+### Crear cadena completa
 
 ```bash
 # Orden correcto: Leaf → Intermediate → Root
@@ -861,7 +859,7 @@ cat server.crt intermediate.crt ca.crt > chain.pem
 cat server.crt intermediate.crt > bundle.pem
 ```
 
-###  Validar Cadena
+###  Validar cadena
 
 ```bash
 openssl verify -CAfile ca.crt -untrusted intermediate.crt server.crt
@@ -895,9 +893,9 @@ bind :443 ssl crt /path/to/server.pem
 
 ---
 
-## Revocación de Certificados
+### Revocación de Certificados
 
-### 📋 Métodos de Revocación
+### Metodos de revocación
 
 | Método | Tipo | Latencia | Complejidad | Uso |
 |--------|------|----------|------------|-----|
@@ -967,7 +965,7 @@ openssl ocsp -issuer ca.pem -cert cert.pem -url http://ocsp.ca.com
 
 ---
 
-## Post-Cuántico
+### Post-Cuántico
 
 ### Algoritmos post-cuanticos recomendados
 
@@ -1007,7 +1005,7 @@ Contiene recomendaciones actualizadas sobre algoritmos post-cuánticos.
 
 ---
 
-## Casos de Uso
+### Casos de Uso
 
 ###  Caso 1: Sitio Web HTTPS (Let's Encrypt)
 
@@ -1221,32 +1219,32 @@ openssl req -in cert.csr -text -noout | grep -A10 "Requested Extensions"
 
 ### Estándares Oficiales
 
-- 🔗 [RFC 5280](https://tools.ietf.org/html/rfc5280) - X.509 PKI Certificate and CRL Profile
-- 🔗 [RFC 6234](https://tools.ietf.org/html/rfc6234) - US Secure Hash Algorithms
-- 🔗 [RFC 7231](https://tools.ietf.org/html/rfc7231) - HSTS
-- 🔗 [RFC 6960](https://tools.ietf.org/html/rfc6960) - OCSP Protocol
-- 🔗 [X.690](https://www.itu.int/rec/T-REC-X.690/en) - DER Encoding
+-  [RFC 5280](https://tools.ietf.org/html/rfc5280) - X.509 PKI Certificate and CRL Profile
+-  [RFC 6234](https://tools.ietf.org/html/rfc6234) - US Secure Hash Algorithms
+-  [RFC 7231](https://tools.ietf.org/html/rfc7231) - HSTS
+-  [RFC 6960](https://tools.ietf.org/html/rfc6960) - OCSP Protocol
+-  [X.690](https://www.itu.int/rec/T-REC-X.690/en) - DER Encoding
 
 ###  Guías de Seguridad
 
-- 🛡️ [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/)
-- 🛡️ [OWASP - Cryptographic Failures](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)
-- 🛡️ [NIST SP 800-175B](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-175B.pdf)
-- 🛡️ [NCSC Guidelines](https://www.ncsc.gov.uk/collection/mobile-device-guidance/using-built-in-platform-features/tls-ssl-and-https)
+-  [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/)
+-  [OWASP - Cryptographic Failures](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)
+-  [NIST SP 800-175B](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-175B.pdf)
+-  [NCSC Guidelines](https://www.ncsc.gov.uk/collection/mobile-device-guidance/using-built-in-platform-features/tls-ssl-and-https)
 
 ###  Herramientas
 
-- 🔧 [OpenSSL](https://www.openssl.org/) - Estándar de facto
-- 🔧 [Certbot](https://certbot.eff.org/) - Automatización Let's Encrypt
-- 🔧 [XCA](http://xca.sourceforge.net/) - GUI para gestión PKI
-- 🔧 [cfssl](https://github.com/cloudflare/cfssl) - PKI toolkit Cloudflare
-- 🔧 [STEP CA](https://smallstep.com/certificates/) - PKI moderna
+-  [OpenSSL](https://www.openssl.org/) - Estándar de facto
+-  [Certbot](https://certbot.eff.org/) - Automatización Let's Encrypt
+-  [XCA](http://xca.sourceforge.net/) - GUI para gestión PKI
+-  [cfssl](https://github.com/cloudflare/cfssl) - PKI toolkit Cloudflare
+-  [STEP CA](https://smallstep.com/certificates/) - PKI moderna
 
 ### Lectura Recomendada
 
-- 📖 "Cryptography Engineering" - Ferguson, Schneier, Kohno
-- 📖 "Public Key Cryptography - Practice & Protocols" - Buchmann
-- 📖 [OpenSSL Cookbook](https://www.feistyduck.com/books/openssl-cookbook/) - Ivan Ristic
+-  "Cryptography Engineering" - Ferguson, Schneier, Kohno
+-  "Public Key Cryptography - Practice & Protocols" - Buchmann
+-  [OpenSSL Cookbook](https://www.feistyduck.com/books/openssl-cookbook/) - Ivan Ristic
 
 ---
 
@@ -1302,17 +1300,8 @@ openssl x509 -in server.crt -text -noout
 
 ---
 
-### Licencia
-
-Este proyecto está bajo licencia **GPL-3.0**. Consulta [LICENSE](LICENSE) para más detalles.
-
----
-
-### Contacto
-
-- 🌐 **Sitio Web**: [www.hackingyseguridad.com](http://www.hackingyseguridad.com/)
-- 📧 **GitHub**: [hackingyseguridad](https://github.com/hackingyseguridad)
-- 🐛 **Issues**: [Reportar problema](https://github.com/hackingyseguridad/certificado/issues)
-- 🔗 **Repositorio relacionado**: [Cifrados](https://github.com/hackingyseguridad/cifrados)
+#
+http://www.hackingyseguridad.com/
+#
 
 ---
