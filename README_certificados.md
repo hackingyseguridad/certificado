@@ -17,8 +17,6 @@
 - [Cadena de Certificados](#cadena-de-certificados)
 - [Revocación de Certificados](#revocación-de-certificados)
 - [Post-Cuántico](#post-cuántico)
-- [Casos de Uso](#casos-de-uso)
-- [Solución de Problemas](#solución-de-problemas)
 - [Referencias](#referencias)
 
 ---
