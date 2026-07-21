@@ -1,5 +1,5 @@
 #!/bin/sh
-
+#!/bin/bash
 # Busca FQDN por dominio y filtra solo common_name
 # @antonio_taboada
 
