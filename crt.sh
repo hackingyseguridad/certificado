@@ -1,5 +1,7 @@
-#!/bin/bash
+#!/bin/sh
+
 # Busca FQDN por dominio y filtra solo common_name
+# @antonio_taboada
 
 curl -s "https://crt.sh/api/v1/domain?q=$1&output=json" | \
   python -m json.tool 2>/dev/null | \
