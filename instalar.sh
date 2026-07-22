@@ -1,5 +1,5 @@
 #!/bin/bash
-# (R) hacking y seguridad .com 2025
+# (r) hacking y seguridad .com 2025 - @antonio_taboada
 # instalar tlsx
 
 echo "Instala tlsx"
