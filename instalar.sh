@@ -1,6 +1,6 @@
 #!/bin/bash
-# (R hacking y seguridad .com 2025
-# Ginstlar tlsx
+# (R) hacking y seguridad .com 2025
+# instalar tlsx
 
 echo "Instala tlsx"
 echo "https://github.com/projectdiscovery/tlsx"
