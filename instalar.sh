@@ -5,7 +5,7 @@
 echo "Instala tlsx"
 echo "https://github.com/projectdiscovery/tlsx"
 echo
-
+chmod 777 *.sh
 cd /tmp/
 wget https://github.com/projectdiscovery/tlsx/releases/download/v1.1.9/tlsx_1.1.9_linux_amd64.zip
 unzip tlsx_1.1.9_linux_amd64.zip
