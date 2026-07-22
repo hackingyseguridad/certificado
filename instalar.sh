@@ -12,6 +12,5 @@ unzip tlsx_1.1.9_linux_amd64.zip
 chmod +x tlsx
 sudo  mv tlsx /usr/local/bin/
 echo
-chmod 777 *.sh
 echo "..."
 echo
